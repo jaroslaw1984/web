@@ -1,0 +1,79 @@
+.header
+  @media screen and (max-width: 500px)
+    justify-content: space-around
+    width: 100%
+    margin-top: 5%
+  .topNav
+    height: 100%
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    justify-content: center
+    align-items: center
+    @media screen and (max-width: 823px) and (orientation: landscape)
+      height: 0
+    @media screen and (max-width: 414px)
+      height: 0
+    h1.companyNameTitle
+      display: flex
+      padding: 0 10px
+      font-size: 2.5rem
+      color: $black-color
+      border: 2px solid $hex-black
+      border-radius: 10px
+      box-shadow: $box-shadow
+      background-color: $hex-white
+      @media screen and (max-width: 1770px)
+        font-size: 2rem
+      @media screen and (max-width: 1400px)
+        font-size: 1.8rem
+      @media screen and (max-width: 1000px)
+        font-size: 1.5rem
+      @media screen and (max-width: 760px)
+        font-size: 1rem
+      @media screen and (max-width: 513px)
+        font-size: 0.9rem
+      @media screen and (max-width: 414px)
+        line-height: 20px
+        font-size: 0.8rem
+      @media screen and (max-width: 375px)
+        font-size: 0.7rem
+      @media screen and (max-width: 360px)
+        font-size: 0.72rem
+      @media screen and (max-width: 320px)
+        font-size: 0.65rem
+    & .cursor
+      opacity: 0
+    & .cursor.toggle 
+      opacity: 1
+    & span:last-child
+      flex-grow: 1
+      color: $bgc
+    div.navIcons
+      display: flex
+      justify-content: flex-end
+      align-items: center
+      padding: 0 10px
+      font-size: 2.5rem
+      @media screen and (max-width: $medium)   
+       font-size: 1.5rem
+      @media screen and (max-width: $large)   
+       font-size: 1.8rem
+      @media screen and (max-width: 414px)   
+       font-size: 1.3rem
+      a.socialNavIcons
+        flex-basis: 8vh
+        display: flex
+        padding: 5px 0
+        justify-content: center
+        margin-right: 5px
+        text-decoration: none
+        color: $blue
+        transition: .3s
+        &:hover 
+          border-radius: 8%
+          background-color: $hex-white 
+      & a:first-child:hover 
+          color: $hex-black
+    h1.companyNameTitle span + span 
+      text-align: right
+        

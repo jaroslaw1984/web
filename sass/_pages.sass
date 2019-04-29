@@ -1,0 +1,392 @@
+div.pageContent1
+  margin: 30px 30px
+  @media screen and (max-width: 375px)
+    margin: 25px auto
+  & ul.ulCont
+    display: flex
+    height: 18vh
+    justify-content: space-around
+    @media screen and (max-width: 768px)
+      align-items: flex-start
+    @media screen and (max-width: 823px) and (orientation: landscape)
+      height: 25vh
+    @media screen and (orientation: portrait) and (max-width: 675px)  
+      height: 15vh
+    @media screen and (orientation: portrait) and (max-width: 600px)  
+      height: 12vh
+      margin: 0 10px
+    @media screen and (orientation: portrait) and (max-width: 510px)  
+      height: 10vh
+      flex-wrap: wrap
+      justify-content: center
+      align-items: center
+    @media screen and (orientation: portrait) and (max-width: 500px)  
+      height: 10vh
+      flex-wrap: wrap
+      justify-content: center
+      align-items: center
+    @media screen and (max-width: 500px)
+      height: 15vh
+      flex-wrap: wrap
+      justify-content: center
+      align-items: center
+    @media screen and (max-width: 414px)
+      height: 15vh
+      margin-bottom: 20px
+    @media screen and (max-width: 375px)
+      height: 15vh
+  & ul li.icon
+    position: relative
+    display: flex
+    flex-basis: 25vh
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    border: 2px solid $hex-black
+    list-style: none
+    border: 2px solid $hex-black 
+    border-radius: 13px
+    color: $hex-black
+    background-color: $hex-white
+    transition: all .3s linear
+    cursor: pointer
+    @media screen and (max-width: 1200px)
+      flex-basis: 20vh
+      height: 70%
+    @media screen and (max-width: 1024px)
+      flex-basis: 10vh
+      height: 50%
+      margin: 0 5px
+    @media screen and (orientation: landscape) and (max-width: 1024px)
+      flex-basis: 15vh
+      height: 70%
+    @media screen and (orientation: portrait) and (max-width: 935px)
+      flex-basis: 15vh
+      height: 70%
+    @media screen and (orientation: portrait) and (max-width: 920px)
+      flex-basis: 15vh
+      height: 70%
+    @media screen and (max-width: 823px) and (orientation: landscape)
+      flex-basis: 20vh
+      height: 100%
+    @media screen and (max-width: 975px)
+      flex-basis: 15vh
+    @media screen and (max-width: 768px)
+      flex-basis: 18vh
+    @media screen and (orientation: portrait) and (max-width: 675px)   
+      flex-basis: 20vh
+    @media screen and (orientation: portrait) and (max-width: 600px)   
+      flex-basis: 15vh
+    @media screen and (orientation: portrait) and (max-width: 510px)   
+      flex-basis: auto
+    @media screen and (orientation: portrait) and (max-width: 500px)   
+      flex-basis: auto
+    @media screen and (max-width: 615px)
+      flex-basis: 10vh
+    @media screen and (max-width: 414px)
+      flex-basis: 15vh
+      margin: 5px
+    @media screen and (max-width: 375px)
+      flex-basis: 15vh
+    @media screen and (max-width: 360px)
+      flex-basis: 18vh
+    @media screen and (max-width: 320px)
+      flex-basis: 20vh
+    &:hover
+      background: linear-gradient(-45deg, $blue, $purpure);
+      border: 2px solid $hex-black 
+      color: $hex-white
+      &:hover svg
+        color: $hex-white
+    & svg
+      transition: all .3s linear
+      font-size: 5rem
+      color: $blue
+      @media screen and (max-width: 1200px)
+        margin-top: 5px
+        font-size: 4rem
+      @media screen and (max-width: 1110px)
+        margin-top: 5px
+        font-size: 3.5rem
+      @media screen and (max-width: 1024px)
+        font-size: 3rem
+      @media screen and (max-width: 1024px) and (orientation: landscape) 
+        font-size: 2.5rem
+      @media screen and (max-width: 823px) and (orientation: landscape)
+        font-size: 2.5rem
+      @media screen and (max-width: 768px)
+        margin-top: 5px
+        font-size: 2rem
+      @media screen and (max-width: 615px)
+        font-size: 1.5rem
+      @media screen and (orientation: portrait) and (max-width: 510px)  
+        font-size: 1.8rem
+      @media screen and (max-width: 375px)
+        font-size: 1.2rem
+      // @media screen and (max-width: 360px)
+      //   font-size: 1.1rem
+      @media screen and (max-width: 320px)
+        font-size: 1.5rem
+    & span
+      padding: 10px 20px
+      text-align: center
+      font-size: 1rem
+      @media screen and (max-width: 1024px)
+        font-size: 1.3rem
+      @media screen and (orientation: landscape) and (max-width: 1024px)
+        font-size: 1rem
+      @media screen and (max-width: 1024px) and (orientation: landscape) 
+        font-size: 0.8rem
+      @media screen and (orientation: portrait) and (max-width: 935px)
+        font-size: 1rem
+      @media screen and (orientation: portrait) and (max-width: 920px)
+        font-size: 1rem
+      @media screen and (max-width: 900px)
+        font-size: 0.8rem
+      @media screen and (max-width: $medium)
+        font-size: 0.7rem
+        padding: 10px 10px
+      @media screen and (max-width: 768px)
+        font-size: 0.9rem
+      @media screen and (orientation: portrait) and (max-width: 675px)  
+        font-size: 0.9rem
+      @media screen and (orientation: portrait) and (max-width: 600px)  
+        font-size: 0.8rem
+      @media screen and (orientation: portrait) and (max-width: 580px)  
+        font-size: 0.7rem
+      @media screen and (orientation: portrait) and (max-width: 510px)  
+        font-size: 0.65rem
+      @media screen and (max-width: 615px)
+        padding: 5px 10px
+      @media screen and (max-width: 414px)
+        font-size: 0.8rem
+      @media screen and (max-width: 360px)
+        font-size: 0.7rem
+  & ul li.active
+    background: linear-gradient(-45deg, $blue, $purpure);    
+    color: $hex-white
+    & svg
+      color: $hex-white
+    &::after
+      content: ""
+      position: absolute
+      top: calc(95% - 15px)
+      left: calc(50% - 15px)
+      width: 30px
+      height: 30px
+      border: 3px solid $hex-white
+      border-left: transparent
+      border-top: transparent
+      transform: translateY(-50%)
+      transform: rotate(45deg)
+      border-bottom-left-radius: 10px 
+      border-top-right-radius: 10px
+      animation: move 1s alternate infinite linear
+      @media screen and (orientation: portrait) and (max-width: 510px)       
+        display: none
+      @media screen and (max-width: 500px)
+        display: none
+      @keyframes move 
+        from 
+          top: calc(95% - 15px)
+        to
+          top: calc(105% - 15px)
+div.pageContent2
+  display: flex 
+  flex-basis: 25vw
+  justify-content: space-around
+  margin: 0 10px
+  @media screen and (max-width: 1110px)
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    flex-basis: 50vw
+    transition: all .5s linear
+  @media screen and (max-width: 1024px)
+    flex-basis: 75vw
+  @media screen and (orientation: landscape) and (max-width: 1024px)
+    flex-basis: 50vw
+  @media screen and (max-width: 1024px) and (orientation: landscape) 
+    flex-basis: 40vw
+  @media screen and (max-width: 950px)
+    flex-basis: 55vw
+  @media screen and (max-width: 823px) and (orientation: landscape)
+    flex-basis: 60vw
+  @media screen and (max-width: 800px)
+    flex-basis: 65vw
+  @media screen and (max-width: 770px)
+    flex-basis: 80vw
+  @media screen and (orientation: portrait) and (max-width: 768px)       
+    flex-basis: 70vw
+  @media screen and (orientation: portrait) and (max-width: 675px)       
+    flex-basis: 80vw
+  @media screen and (orientation: portrait) and (max-width: 600px)       
+    flex-basis: 100vw
+  @media screen and (orientation: portrait) and (max-width: 510px)       
+    margin-top: 30px
+    justify-content: flex-end
+  @media screen and (orientation: portrait) and (max-width: 500px)       
+    margin-top: 30px
+    justify-content: flex-end
+  @media screen and (min-width: 568px) and (max-width: 843px) and (orientation: landscape) 
+    flex-basis: 90vw
+  @media screen and (max-width: 500px)
+    margin-top: 30px
+    justify-content: flex-end
+    flex-basis: 100vw
+  @media screen and (max-width: 414px)
+    flex-basis: 140vw
+  @media screen and (max-width: 320px)
+    flex-basis: auto
+  & .tag1, 
+  & .tag2 
+    flex-basis: 49%
+    height: 50vh
+    overflow: hidden
+  & .tag1 
+    border: trasparent
+    border-radius: 10px
+    @media screen and (max-width: 1200px)
+      flex-basis: auto
+      height: auto
+    @media screen and (max-width: 1110px)
+      width: 50%
+    @media screen and (max-width: 1024px)
+      width: 80%
+    @media screen and (orientation: landscape) and (max-width: 1024px)
+      width: 50%
+    @media screen and (max-width: 1024px) and (orientation: landscape) 
+      width: 40%
+    @media screen and (orientation: portrait) and (max-width: 935px)
+      width: 50%
+    @media screen and (orientation: portrait) and (max-width: 920px)
+      width: 50%
+    @media screen and (orientation: portrait) and (max-width: 800px)
+      width: 70%
+    @media screen and (orientation: portrait) and (max-width: 675px)
+      width: 85%
+    @media screen and (orientation: portrait) and (max-width: 610px)
+      width: 100%
+    @media screen and (max-width: 415px)
+      width: 100%
+    @media screen and (min-width: 568px) and (max-width: 843px) and (orientation: landscape) 
+      width: 80%
+    & img 
+      width: 100%
+      height: auto
+  & .tag2 
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    text-align: right
+    padding: 12px
+    border: 3px solid $blue
+    border-bottom: transparent
+    border-left: transparent
+    border-top-right-radius: 10px
+    border-top-left-radius: 10px
+    border-bottom-right-radius: 10px 
+    @media screen and (max-width: 1110px)
+      margin-top: 30px
+    @media screen and (max-width: 1024px)
+      justify-content: flex-start
+    @media screen and (orientation: portrait) and (max-width: 510px)
+      flex-basis: 30vh
+      justify-content: flex-start
+    @media screen and (orientation: portrait) and (max-width: 500px)
+      flex-basis: 30vh
+      justify-content: flex-start
+    @media screen and (max-width: 500px)
+      flex-basis: auto
+      justify-content: center
+    @media screen and (max-width: 375px)
+      flex-basis: 35vh
+      justify-content: flex-start
+      
+    & h2, 
+    & p
+      text-shadow: $shadow 
+      color: $hex-white
+    & h2 
+      font-size: 3rem
+      margin-bottom: 15px
+      @media screen and (max-width: 1600px)
+        font-size: 2.8rem       
+      @media screen and (max-width: 1420px)
+        font-size: 2.7rem       
+      @media screen and (max-width: 1320px)
+        font-size: 2.6rem       
+      @media screen and (max-width: 1200px)
+        font-size: 2.2rem       
+      @media screen and (max-width: 1170px)
+        font-size: 2rem       
+      @media screen and (max-width: 1024px)
+        font-size: 2.7rem       
+      @media screen and (orientation: landscape) and (max-width: 1024px)
+        font-size: 1.8rem
+      @media screen and (max-width: 1024px) and (orientation: landscape) 
+        font-size: 1.5rem
+      @media screen and (orientation: portrait) and (max-width: 935px)
+        font-size: 1.7rem
+      @media screen and (orientation: portrait) and (max-width: 920px)
+        font-size: 1.7rem
+      @media screen and (orientation: portrait) and (max-width: 800px)
+        font-size: 1.5rem
+      @media screen and (max-width: 830px)
+        font-size: 1.8rem       
+      @media screen and (max-width: 768px)
+        font-size: 1.7rem
+      @media screen and (orientation: portrait) and (max-width: 768px)       
+        font-size: 1.5rem
+      @media screen and (orientation: portrait) and (max-width: 570px)
+        font-size: 1.2rem
+      @media screen and (max-width: 411px)
+        font-size: 1.6rem       
+      @media screen and (max-width: 375px)
+        font-size: 1.4rem       
+      @media screen and (orientation: portrait) and (max-width: 360px)
+        font-size: 1rem
+      @media screen and (max-width: 320px)
+        font-size: 1.1rem       
+    & p 
+      font-size: 1.8rem
+      @media screen and (max-width: 1600px)
+        font-size: 1.6rem       
+      @media screen and (max-width: 1420px)
+        font-size: 1.5rem       
+      @media screen and (max-width: 1320px)
+        font-size: 1.4rem            
+      @media screen and (max-width: 1200px)
+        font-size: 1.2rem       
+      @media screen and (max-width: 1150px)
+        font-size: 1rem       
+      @media screen and (max-width: 1110px)
+        font-size: 1.3rem 
+      @media screen and (max-width: 1024px)
+        font-size: 1.7rem 
+      @media screen and (orientation: landscape) and (max-width: 1024px)
+        font-size: 1.2rem 
+      @media screen and (orientation: portrait) and (max-width: 935px)
+        font-size: 1.4rem 
+      @media screen and (orientation: portrait) and (max-width: 920px)
+        font-size: 1.3rem
+      @media screen and (orientation: portrait) and (max-width: 800px)
+        font-size: 1.1rem
+      @media screen and (max-width: 768px)      
+        font-size: 1.4rem
+      @media screen and (orientation: portrait) and (max-width: 768px)       
+        font-size: 1.2rem
+      @media screen and (orientation: portrait) and (max-width: 720px)       
+        font-size: 1.1rem
+      @media screen and (orientation: portrait) and (max-width: 570px)
+        font-size: 1rem
+      @media screen and (max-width: 670px)      
+        font-size: 1.1rem
+      @media screen and (max-width: 375px)      
+        font-size: 1rem
+      @media screen and (orientation: portrait) and (max-width: 360px)
+        font-size: 0.9rem    
+
+
+
+

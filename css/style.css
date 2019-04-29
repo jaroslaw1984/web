@@ -1,0 +1,3948 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&subset=latin-ext");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 0.1fr 1fr;
+      grid-template-rows: 0.1fr 1fr;
+  -ms-grid-columns: 0.08fr 1fr;
+      grid-template-columns: 0.08fr 1fr;
+      grid-template-areas: "aside header" "aside main";
+  grid-column-gap: 2px;
+  grid-row-gap: 2px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    background: url("../img/background/mobile.jpg") center/cover fixed no-repeat;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .container {
+    -ms-grid-columns: 0.10fr 1fr;
+        grid-template-columns: 0.10fr 1fr;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .container {
+    -ms-grid-columns: 0.12fr 1fr;
+        grid-template-columns: 0.12fr 1fr;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    -ms-grid-columns: 0.15fr 1fr;
+        grid-template-columns: 0.15fr 1fr;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    -ms-grid-columns: 0.17fr 1fr;
+        grid-template-columns: 0.17fr 1fr;
+  }
+}
+
+@media screen and (max-width: 823px) and (orientation: landscape) {
+  .container {
+    -ms-grid-columns: auto 1fr;
+        grid-template-columns: auto 1fr;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .container {
+    -ms-grid-columns: auto 1fr;
+        grid-template-columns: auto 1fr;
+  }
+}
+
+.header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: header;
+  border-bottom-left-radius: 5px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 1;
+}
+
+.videoContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  z-index: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .videoContainer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 823px) and (orientation: landscape) {
+  .videoContainer {
+    display: none;
+  }
+}
+
+.videoContainer .videoItem {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.aside {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: aside;
+}
+
+.main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: main;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.9fr;
+      grid-template-columns: 0.9fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow-x: hidden;
+}
+
+.main section.wheelOptions {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 140px;
+  height: 150px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 823px) and (orientation: landscape) {
+  .main section.wheelOptions {
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 640px) and (orientation: landscape) {
+  .main section.wheelOptions {
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 568px) and (orientation: landscape) {
+  .main section.wheelOptions {
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .main section.wheelOptions {
+    height: 65px;
+  }
+}
+
+.main section.wheelOptions div.option {
+  position: fixed;
+  right: 20px;
+  bottom: 15px;
+  font-size: 3.5rem;
+  color: orange;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1770px) {
+  .main section.wheelOptions div.option {
+    font-size: 3.2rem;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .main section.wheelOptions div.option {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .main section.wheelOptions div.option {
+    font-size: 2.8rem;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .main section.wheelOptions div.option {
+    font-size: 2.5rem;
+  }
+}
+
+.main section.wheelOptions div.option:hover {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  color: orange;
+}
+
+.main section.wheelOptions div#about {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 30%;
+  height: 30%;
+  font-size: 1.5rem;
+  color: #f1f1f1;
+  text-shadow: 1px 2px 3px #000;
+  background-color: #3f3f3f;
+  -webkit-box-shadow: 6px 6px 5px #222222;
+          box-shadow: 6px 6px 5px #222222;
+  border: 1px solid #111111;
+  border-radius: 0.8%;
+}
+
+@media screen and (max-width: 1024px) {
+  .main section.wheelOptions div#about {
+    font-size: 2rem;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    width: 50%;
+    height: 30%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main section.wheelOptions div#about {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .main section.wheelOptions div#about {
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 411px) {
+  .main section.wheelOptions div#about {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .main section.wheelOptions div#about {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .main section.wheelOptions div#about {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (min-width: 568px) and (max-width: 823px) and (orientation: landscape) {
+  .main section.wheelOptions div#about {
+    font-size: 1rem;
+  }
+}
+
+.main section.wheelOptions div#about div#info4 {
+  width: 100px;
+  padding: 5px;
+  font-size: 1.2rem;
+  color: orange;
+  border: 2px solid orange;
+  border-radius: 10%;
+  text-align: center;
+  -webkit-transition: .3s;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.main section.wheelOptions div#about div#info4:hover {
+  background-color: orange;
+  color: #f1f1f1;
+}
+
+.main section.wheelOptions div.info,
+.main section.wheelOptions div.play,
+.main section.wheelOptions div.pause {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  font-size: 2.5rem;
+  color: #f1f1f1;
+  cursor: pointer;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+  display: none;
+}
+
+@media screen and (max-width: 1770px) {
+  .main section.wheelOptions div.info,
+  .main section.wheelOptions div.play,
+  .main section.wheelOptions div.pause {
+    font-size: 2.4rem;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .main section.wheelOptions div.info,
+  .main section.wheelOptions div.play,
+  .main section.wheelOptions div.pause {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .main section.wheelOptions div.info,
+  .main section.wheelOptions div.play,
+  .main section.wheelOptions div.pause {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main section.wheelOptions div.info,
+  .main section.wheelOptions div.play,
+  .main section.wheelOptions div.pause {
+    font-size: 1.8rem;
+  }
+}
+
+.main section.wheelOptions div.info:hover,
+.main section.wheelOptions div.play:hover,
+.main section.wheelOptions div.pause:hover {
+  color: orange;
+}
+
+.main section.wheelOptions div.info.show1,
+.main section.wheelOptions div.play.show1,
+.main section.wheelOptions div.pause.show1 {
+  display: block;
+  opacity: 1;
+  -webkit-animation-name: showIcons1;
+          animation-name: showIcons1;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@media screen and (max-width: 823px) and (orientation: landscape) {
+  .main section.wheelOptions div.info.show1,
+  .main section.wheelOptions div.play.show1,
+  .main section.wheelOptions div.pause.show1 {
+    position: fixed;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main section.wheelOptions div.info.show1,
+  .main section.wheelOptions div.play.show1,
+  .main section.wheelOptions div.pause.show1 {
+    position: fixed;
+  }
+}
+
+.main section.wheelOptions div.info.hide1,
+.main section.wheelOptions div.play.hide1,
+.main section.wheelOptions div.pause.hide1 {
+  -webkit-animation-name: hide1;
+          animation-name: hide1;
+  animation-direction: reverse;
+}
+
+.main section.wheelOptions div.play.show2 {
+  display: block;
+  opacity: 0;
+  -webkit-animation-name: showIcons2;
+          animation-name: showIcons2;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@media screen and (max-width: 800px) {
+  .main section.wheelOptions div.play.show2 {
+    display: none;
+  }
+}
+
+.main section.wheelOptions div.play.hide2 {
+  -webkit-animation-name: hide2;
+          animation-name: hide2;
+  animation-direction: reverse;
+}
+
+.main section.wheelOptions div.pause.show3 {
+  display: block;
+  opacity: 0;
+  -webkit-animation-name: showIcons3;
+          animation-name: showIcons3;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@media screen and (max-width: 800px) {
+  .main section.wheelOptions div.pause.show3 {
+    display: none;
+  }
+}
+
+.main section.wheelOptions div.pause.hide3 {
+  -webkit-animation-name: hide3;
+          animation-name: hide3;
+  animation-direction: reverse;
+}
+
+@-webkit-keyframes showIcons1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    right: 100px;
+  }
+}
+
+@keyframes showIcons1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    right: 100px;
+  }
+}
+
+@-webkit-keyframes hide1 {
+  0% {
+    opacity: 0;
+    right: -40px;
+    bottom: 15px;
+  }
+  30% {
+    opacity: 0;
+    right: -5px;
+    bottom: 5px;
+  }
+  50% {
+    opacity: 0;
+    right: 20px;
+    bottom: 15px;
+  }
+  100% {
+    opacity: 1;
+    right: 100px;
+  }
+}
+
+@keyframes hide1 {
+  0% {
+    opacity: 0;
+    right: -40px;
+    bottom: 15px;
+  }
+  30% {
+    opacity: 0;
+    right: -5px;
+    bottom: 5px;
+  }
+  50% {
+    opacity: 0;
+    right: 20px;
+    bottom: 15px;
+  }
+  100% {
+    opacity: 1;
+    right: 100px;
+  }
+}
+
+@-webkit-keyframes showIcons2 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    right: 80px;
+    bottom: 80px;
+  }
+}
+
+@keyframes showIcons2 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    right: 80px;
+    bottom: 80px;
+  }
+}
+
+@-webkit-keyframes hide2 {
+  0% {
+    opacity: 0;
+    right: 0;
+    bottom: -40px;
+  }
+  30% {
+    opacity: 0;
+    right: 20px;
+    bottom: 20px;
+  }
+  50% {
+    opacity: 0;
+    right: 40px;
+    bottom: 40px;
+  }
+  100% {
+    opacity: 1;
+    right: 80px;
+    bottom: 80px;
+  }
+}
+
+@keyframes hide2 {
+  0% {
+    opacity: 0;
+    right: 0;
+    bottom: -40px;
+  }
+  30% {
+    opacity: 0;
+    right: 20px;
+    bottom: 20px;
+  }
+  50% {
+    opacity: 0;
+    right: 40px;
+    bottom: 40px;
+  }
+  100% {
+    opacity: 1;
+    right: 80px;
+    bottom: 80px;
+  }
+}
+
+@-webkit-keyframes showIcons3 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    right: 30px;
+    bottom: 105px;
+  }
+}
+
+@keyframes showIcons3 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    right: 30px;
+    bottom: 105px;
+  }
+}
+
+@-webkit-keyframes hide3 {
+  0% {
+    opacity: 0;
+    right: 30px;
+    bottom: -40px;
+  }
+  30% {
+    opacity: 0;
+    right: 30px;
+    bottom: 10px;
+  }
+  50% {
+    opacity: 0;
+    right: 30px;
+    bottom: 50px;
+  }
+  100% {
+    opacity: 1;
+    right: 30px;
+    bottom: 105px;
+  }
+}
+
+@keyframes hide3 {
+  0% {
+    opacity: 0;
+    right: 30px;
+    bottom: -40px;
+  }
+  30% {
+    opacity: 0;
+    right: 30px;
+    bottom: 10px;
+  }
+  50% {
+    opacity: 0;
+    right: 30px;
+    bottom: 50px;
+  }
+  100% {
+    opacity: 1;
+    right: 30px;
+    bottom: 105px;
+  }
+}
+
+.showInfo {
+  position: relative;
+  top: 0;
+  right: -110%;
+  min-height: 95%;
+  background-color: rgba(90, 92, 107, 0.85);
+  -webkit-box-shadow: 1px 1px 3px #222222;
+          box-shadow: 1px 1px 3px #222222;
+  border: 1px solid #111111;
+  border-radius: 0.8%;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  overflow: hidden;
+}
+
+.showInfo div.windowClose {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .showInfo div.windowClose {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media screen and (max-width: 1750px) {
+  .showInfo div.windowClose {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .showInfo div.windowClose {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.showInfo div.windowClose .iconClose {
+  text-align: center;
+  line-height: 80px;
+  font-size: 4rem;
+  color: #f1f1f1;
+  border-radius: 10%;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+@media screen and (max-width: 800px) {
+  .showInfo div.windowClose .iconClose {
+    font-size: 3.5rem;
+    line-height: 70px;
+  }
+}
+
+@media screen and (max-width: 1750px) {
+  .showInfo div.windowClose .iconClose {
+    font-size: 3.3rem;
+    line-height: 60px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .showInfo div.windowClose .iconClose {
+    font-size: 3rem;
+    line-height: 50px;
+  }
+}
+
+@media screen and (max-width: 411px) {
+  .showInfo div.windowClose .iconClose {
+    font-size: 2.5rem;
+    line-height: 50px;
+  }
+}
+
+.showInfo div.windowClose .iconClose:hover {
+  background-color: #3f3f3f;
+  color: orange;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.active {
+  right: 0;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+section div.mainContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+section.showInfo h1.header {
+  width: 60%;
+  margin: 10px 30px;
+  padding: 3px 15px;
+  color: #f1f1f1;
+  font-size: 2.2rem;
+  border: 2px solid brown;
+  border-top-style: none;
+  border-left-style: none;
+  -webkit-box-shadow: 6px 6px 5px #222222;
+          box-shadow: 6px 6px 5px #222222;
+  text-shadow: 1px 2px 3px #000;
+  -webkit-transform: skew(-30deg);
+          transform: skew(-30deg);
+}
+
+@media screen and (max-width: 800px) {
+  section.showInfo h1.header {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 1770px) {
+  section.showInfo h1.header {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  section.showInfo h1.header {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  section.showInfo h1.header {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  section.showInfo h1.header {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  section.showInfo h1.header {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  section.showInfo h1.header {
+    font-size: 0.7rem;
+  }
+}
+
+section.showInfo h1.header span {
+  display: block;
+  -webkit-transform: skew(30deg);
+          transform: skew(30deg);
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.6);
+  z-index: 999;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    width: 100%;
+    margin-top: 5%;
+  }
+}
+
+.header .topNav {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 823px) and (orientation: landscape) {
+  .header .topNav {
+    height: 0;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .header .topNav {
+    height: 0;
+  }
+}
+
+.header .topNav h1.companyNameTitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 10px;
+  font-size: 2.5rem;
+  color: rgba(90, 92, 107, 0.85);
+  border: 2px solid #3f3f3f;
+  border-radius: 10px;
+  -webkit-box-shadow: 6px 6px 5px #222222;
+          box-shadow: 6px 6px 5px #222222;
+  background-color: #f1f1f1;
+}
+
+@media screen and (max-width: 1770px) {
+  .header .topNav h1.companyNameTitle {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .header .topNav h1.companyNameTitle {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .header .topNav h1.companyNameTitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .header .topNav h1.companyNameTitle {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 513px) {
+  .header .topNav h1.companyNameTitle {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .header .topNav h1.companyNameTitle {
+    line-height: 20px;
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .header .topNav h1.companyNameTitle {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .header .topNav h1.companyNameTitle {
+    font-size: 0.72rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header .topNav h1.companyNameTitle {
+    font-size: 0.65rem;
+  }
+}
+
+.header .topNav .cursor {
+  opacity: 0;
+}
+
+.header .topNav .cursor.toggle {
+  opacity: 1;
+}
+
+.header .topNav span:last-child {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  color: #997fbc;
+}
+
+.header .topNav div.navIcons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 10px;
+  font-size: 2.5rem;
+}
+
+@media screen and (max-width: 800px) {
+  .header .topNav div.navIcons {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .header .topNav div.navIcons {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .header .topNav div.navIcons {
+    font-size: 1.3rem;
+  }
+}
+
+.header .topNav div.navIcons a.socialNavIcons {
+  -ms-flex-preferred-size: 8vh;
+      flex-basis: 8vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: 5px;
+  text-decoration: none;
+  color: #3498db;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.header .topNav div.navIcons a.socialNavIcons:hover {
+  border-radius: 8%;
+  background-color: #f1f1f1;
+}
+
+.header .topNav div.navIcons a:first-child:hover {
+  color: #3f3f3f;
+}
+
+.header .topNav h1.companyNameTitle span + span {
+  text-align: right;
+}
+
+ul.asideIcons {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+@media screen and (max-width: 823px) and (orientation: landscape) {
+  ul.asideIcons {
+    position: fixed;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    z-index: 0;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  ul.asideIcons {
+    position: fixed;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: (1fr)[3];
+        grid-template-rows: repeat(3, 1fr);
+    z-index: 0;
+  }
+}
+
+ul.asideIcons li.navIcons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 823px) and (orientation: landscape) {
+  ul.asideIcons li.navIcons {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  ul.asideIcons li.navIcons {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+ul.asideIcons li.navIcons img {
+  -webkit-transition: .5s;
+  transition: .5s;
+  width: 70%;
+}
+
+@media screen and (max-width: 823px) and (orientation: landscape) {
+  ul.asideIcons li.navIcons img {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  ul.asideIcons li.navIcons img {
+    width: 50%;
+  }
+}
+
+ul.asideIcons li.navIcons img:hover {
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  ul.asideIcons li.navIcons img:hover {
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 823px) and (orientation: landscape) {
+  ul.asideIcons li.navIcons img:hover {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  ul.asideIcons li.navIcons img:hover {
+    margin-left: 10px;
+  }
+}
+
+[data-title]:hover::after {
+  opacity: 1;
+  -webkit-transition: all .1s ease .5s;
+  transition: all .1s ease .5s;
+  visibility: visible;
+}
+
+@media screen and (max-width: 1366px) and (orientation: landscape) {
+  [data-title]:hover::after {
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  [data-title]:hover::after {
+    visibility: hidden;
+  }
+}
+
+[data-title]::after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: -0.6rem;
+  left: 110%;
+  color: #f1f1f1;
+  font-size: 1.3rem;
+  padding: 15px 3px;
+  white-space: nowrap;
+  background-color: #997fbc;
+  -webkit-box-shadow: 1px 1px 3px #222222;
+          box-shadow: 1px 1px 3px #222222;
+  border: 1px solid #111111;
+  border-radius: 5px;
+  z-index: 99999;
+  visibility: hidden;
+}
+
+@media screen and (max-width: 1200px) {
+  [data-title]::after {
+    font-size: 1rem;
+    z-index: -99999;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  [data-title]::after {
+    font-size: 0.8rem;
+    z-index: -99999;
+  }
+}
+
+[data-title] {
+  position: relative;
+}
+
+div.formatContent1,
+div.recoveryContent1,
+div.reinstallContent1,
+div.linuxContent1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 75vh;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: 15px 10px;
+}
+
+@media screen and (max-width: 1024px) {
+  div.formatContent1,
+  div.recoveryContent1,
+  div.reinstallContent1,
+  div.linuxContent1 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 80vh;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
+}
+
+@media screen and (max-width: 1366px) and (orientation: landscape) {
+  div.formatContent1,
+  div.recoveryContent1,
+  div.reinstallContent1,
+  div.linuxContent1 {
+    height: 80vh;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 1024px) {
+  div.formatContent1,
+  div.recoveryContent1,
+  div.reinstallContent1,
+  div.linuxContent1 {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  div.formatContent1,
+  div.recoveryContent1,
+  div.reinstallContent1,
+  div.linuxContent1 {
+    -webkit-transition: all .5s linear;
+    transition: all .5s linear;
+    height: 80vh;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  div.formatContent1,
+  div.recoveryContent1,
+  div.reinstallContent1,
+  div.linuxContent1 {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -ms-flex-line-pack: end;
+        align-content: flex-end;
+    margin: 5px 10px;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 568px) and (max-width: 823px) and (orientation: landscape) {
+  div.formatContent1,
+  div.recoveryContent1,
+  div.reinstallContent1,
+  div.linuxContent1 {
+    height: auto;
+  }
+}
+
+div.formatContent1 .bf1,
+div.formatContent1 .br1,
+div.formatContent1 .bl1,
+div.formatContent1 .bre1,
+div.formatContent1 .bf2,
+div.formatContent1 .br2,
+div.formatContent1 .bl2,
+div.formatContent1 .bre2,
+div.recoveryContent1 .bf1,
+div.recoveryContent1 .br1,
+div.recoveryContent1 .bl1,
+div.recoveryContent1 .bre1,
+div.recoveryContent1 .bf2,
+div.recoveryContent1 .br2,
+div.recoveryContent1 .bl2,
+div.recoveryContent1 .bre2,
+div.reinstallContent1 .bf1,
+div.reinstallContent1 .br1,
+div.reinstallContent1 .bl1,
+div.reinstallContent1 .bre1,
+div.reinstallContent1 .bf2,
+div.reinstallContent1 .br2,
+div.reinstallContent1 .bl2,
+div.reinstallContent1 .bre2,
+div.linuxContent1 .bf1,
+div.linuxContent1 .br1,
+div.linuxContent1 .bl1,
+div.linuxContent1 .bre1,
+div.linuxContent1 .bf2,
+div.linuxContent1 .br2,
+div.linuxContent1 .bl2,
+div.linuxContent1 .bre2 {
+  -ms-flex-preferred-size: 49%;
+      flex-basis: 49%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 10px;
+  border: 3px solid #3498db;
+  border-bottom: transparent;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1024px) {
+  div.formatContent1 .bf1,
+  div.formatContent1 .br1,
+  div.formatContent1 .bl1,
+  div.formatContent1 .bre1,
+  div.formatContent1 .bf2,
+  div.formatContent1 .br2,
+  div.formatContent1 .bl2,
+  div.formatContent1 .bre2,
+  div.recoveryContent1 .bf1,
+  div.recoveryContent1 .br1,
+  div.recoveryContent1 .bl1,
+  div.recoveryContent1 .bre1,
+  div.recoveryContent1 .bf2,
+  div.recoveryContent1 .br2,
+  div.recoveryContent1 .bl2,
+  div.recoveryContent1 .bre2,
+  div.reinstallContent1 .bf1,
+  div.reinstallContent1 .br1,
+  div.reinstallContent1 .bl1,
+  div.reinstallContent1 .bre1,
+  div.reinstallContent1 .bf2,
+  div.reinstallContent1 .br2,
+  div.reinstallContent1 .bl2,
+  div.reinstallContent1 .bre2,
+  div.linuxContent1 .bf1,
+  div.linuxContent1 .br1,
+  div.linuxContent1 .bl1,
+  div.linuxContent1 .bre1,
+  div.linuxContent1 .bf2,
+  div.linuxContent1 .br2,
+  div.linuxContent1 .bl2,
+  div.linuxContent1 .bre2 {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+    margin: 5px 0;
+    border: transparent;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 1024px) {
+  div.formatContent1 .bf1,
+  div.formatContent1 .br1,
+  div.formatContent1 .bl1,
+  div.formatContent1 .bre1,
+  div.formatContent1 .bf2,
+  div.formatContent1 .br2,
+  div.formatContent1 .bl2,
+  div.formatContent1 .bre2,
+  div.recoveryContent1 .bf1,
+  div.recoveryContent1 .br1,
+  div.recoveryContent1 .bl1,
+  div.recoveryContent1 .bre1,
+  div.recoveryContent1 .bf2,
+  div.recoveryContent1 .br2,
+  div.recoveryContent1 .bl2,
+  div.recoveryContent1 .bre2,
+  div.reinstallContent1 .bf1,
+  div.reinstallContent1 .br1,
+  div.reinstallContent1 .bl1,
+  div.reinstallContent1 .bre1,
+  div.reinstallContent1 .bf2,
+  div.reinstallContent1 .br2,
+  div.reinstallContent1 .bl2,
+  div.reinstallContent1 .bre2,
+  div.linuxContent1 .bf1,
+  div.linuxContent1 .br1,
+  div.linuxContent1 .bl1,
+  div.linuxContent1 .bre1,
+  div.linuxContent1 .bf2,
+  div.linuxContent1 .br2,
+  div.linuxContent1 .bl2,
+  div.linuxContent1 .bre2 {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 1024px) {
+  div.formatContent1 .bf1,
+  div.formatContent1 .br1,
+  div.formatContent1 .bl1,
+  div.formatContent1 .bre1,
+  div.formatContent1 .bf2,
+  div.formatContent1 .br2,
+  div.formatContent1 .bl2,
+  div.formatContent1 .bre2,
+  div.recoveryContent1 .bf1,
+  div.recoveryContent1 .br1,
+  div.recoveryContent1 .bl1,
+  div.recoveryContent1 .bre1,
+  div.recoveryContent1 .bf2,
+  div.recoveryContent1 .br2,
+  div.recoveryContent1 .bl2,
+  div.recoveryContent1 .bre2,
+  div.reinstallContent1 .bf1,
+  div.reinstallContent1 .br1,
+  div.reinstallContent1 .bl1,
+  div.reinstallContent1 .bre1,
+  div.reinstallContent1 .bf2,
+  div.reinstallContent1 .br2,
+  div.reinstallContent1 .bl2,
+  div.reinstallContent1 .bre2,
+  div.linuxContent1 .bf1,
+  div.linuxContent1 .br1,
+  div.linuxContent1 .bl1,
+  div.linuxContent1 .bre1,
+  div.linuxContent1 .bf2,
+  div.linuxContent1 .br2,
+  div.linuxContent1 .bl2,
+  div.linuxContent1 .bre2 {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  div.formatContent1 .bf1,
+  div.formatContent1 .br1,
+  div.formatContent1 .bl1,
+  div.formatContent1 .bre1,
+  div.formatContent1 .bf2,
+  div.formatContent1 .br2,
+  div.formatContent1 .bl2,
+  div.formatContent1 .bre2,
+  div.recoveryContent1 .bf1,
+  div.recoveryContent1 .br1,
+  div.recoveryContent1 .bl1,
+  div.recoveryContent1 .bre1,
+  div.recoveryContent1 .bf2,
+  div.recoveryContent1 .br2,
+  div.recoveryContent1 .bl2,
+  div.recoveryContent1 .bre2,
+  div.reinstallContent1 .bf1,
+  div.reinstallContent1 .br1,
+  div.reinstallContent1 .bl1,
+  div.reinstallContent1 .bre1,
+  div.reinstallContent1 .bf2,
+  div.reinstallContent1 .br2,
+  div.reinstallContent1 .bl2,
+  div.reinstallContent1 .bre2,
+  div.linuxContent1 .bf1,
+  div.linuxContent1 .br1,
+  div.linuxContent1 .bl1,
+  div.linuxContent1 .bre1,
+  div.linuxContent1 .bf2,
+  div.linuxContent1 .br2,
+  div.linuxContent1 .bl2,
+  div.linuxContent1 .bre2 {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  div.formatContent1 .bf1,
+  div.formatContent1 .br1,
+  div.formatContent1 .bl1,
+  div.formatContent1 .bre1,
+  div.formatContent1 .bf2,
+  div.formatContent1 .br2,
+  div.formatContent1 .bl2,
+  div.formatContent1 .bre2,
+  div.recoveryContent1 .bf1,
+  div.recoveryContent1 .br1,
+  div.recoveryContent1 .bl1,
+  div.recoveryContent1 .bre1,
+  div.recoveryContent1 .bf2,
+  div.recoveryContent1 .br2,
+  div.recoveryContent1 .bl2,
+  div.recoveryContent1 .bre2,
+  div.reinstallContent1 .bf1,
+  div.reinstallContent1 .br1,
+  div.reinstallContent1 .bl1,
+  div.reinstallContent1 .bre1,
+  div.reinstallContent1 .bf2,
+  div.reinstallContent1 .br2,
+  div.reinstallContent1 .bl2,
+  div.reinstallContent1 .bre2,
+  div.linuxContent1 .bf1,
+  div.linuxContent1 .br1,
+  div.linuxContent1 .bl1,
+  div.linuxContent1 .bre1,
+  div.linuxContent1 .bf2,
+  div.linuxContent1 .br2,
+  div.linuxContent1 .bl2,
+  div.linuxContent1 .bre2 {
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+    padding: 0 2px;
+  }
+}
+
+div.formatContent1 .bf1 img.slider,
+div.formatContent1 .br1 img.slider,
+div.formatContent1 .bl1 img.slider,
+div.formatContent1 .bre1 img.slider,
+div.formatContent1 .bf2 img.slider,
+div.formatContent1 .br2 img.slider,
+div.formatContent1 .bl2 img.slider,
+div.formatContent1 .bre2 img.slider,
+div.recoveryContent1 .bf1 img.slider,
+div.recoveryContent1 .br1 img.slider,
+div.recoveryContent1 .bl1 img.slider,
+div.recoveryContent1 .bre1 img.slider,
+div.recoveryContent1 .bf2 img.slider,
+div.recoveryContent1 .br2 img.slider,
+div.recoveryContent1 .bl2 img.slider,
+div.recoveryContent1 .bre2 img.slider,
+div.reinstallContent1 .bf1 img.slider,
+div.reinstallContent1 .br1 img.slider,
+div.reinstallContent1 .bl1 img.slider,
+div.reinstallContent1 .bre1 img.slider,
+div.reinstallContent1 .bf2 img.slider,
+div.reinstallContent1 .br2 img.slider,
+div.reinstallContent1 .bl2 img.slider,
+div.reinstallContent1 .bre2 img.slider,
+div.linuxContent1 .bf1 img.slider,
+div.linuxContent1 .br1 img.slider,
+div.linuxContent1 .bl1 img.slider,
+div.linuxContent1 .bre1 img.slider,
+div.linuxContent1 .bf2 img.slider,
+div.linuxContent1 .br2 img.slider,
+div.linuxContent1 .bl2 img.slider,
+div.linuxContent1 .bre2 img.slider {
+  border: trasparent;
+  border-radius: 10px;
+  width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  div.formatContent1 .bf1 img.slider,
+  div.formatContent1 .br1 img.slider,
+  div.formatContent1 .bl1 img.slider,
+  div.formatContent1 .bre1 img.slider,
+  div.formatContent1 .bf2 img.slider,
+  div.formatContent1 .br2 img.slider,
+  div.formatContent1 .bl2 img.slider,
+  div.formatContent1 .bre2 img.slider,
+  div.recoveryContent1 .bf1 img.slider,
+  div.recoveryContent1 .br1 img.slider,
+  div.recoveryContent1 .bl1 img.slider,
+  div.recoveryContent1 .bre1 img.slider,
+  div.recoveryContent1 .bf2 img.slider,
+  div.recoveryContent1 .br2 img.slider,
+  div.recoveryContent1 .bl2 img.slider,
+  div.recoveryContent1 .bre2 img.slider,
+  div.reinstallContent1 .bf1 img.slider,
+  div.reinstallContent1 .br1 img.slider,
+  div.reinstallContent1 .bl1 img.slider,
+  div.reinstallContent1 .bre1 img.slider,
+  div.reinstallContent1 .bf2 img.slider,
+  div.reinstallContent1 .br2 img.slider,
+  div.reinstallContent1 .bl2 img.slider,
+  div.reinstallContent1 .bre2 img.slider,
+  div.linuxContent1 .bf1 img.slider,
+  div.linuxContent1 .br1 img.slider,
+  div.linuxContent1 .bl1 img.slider,
+  div.linuxContent1 .bre1 img.slider,
+  div.linuxContent1 .bf2 img.slider,
+  div.linuxContent1 .br2 img.slider,
+  div.linuxContent1 .bl2 img.slider,
+  div.linuxContent1 .bre2 img.slider {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  div.formatContent1 .bf1 img.slider,
+  div.formatContent1 .br1 img.slider,
+  div.formatContent1 .bl1 img.slider,
+  div.formatContent1 .bre1 img.slider,
+  div.formatContent1 .bf2 img.slider,
+  div.formatContent1 .br2 img.slider,
+  div.formatContent1 .bl2 img.slider,
+  div.formatContent1 .bre2 img.slider,
+  div.recoveryContent1 .bf1 img.slider,
+  div.recoveryContent1 .br1 img.slider,
+  div.recoveryContent1 .bl1 img.slider,
+  div.recoveryContent1 .bre1 img.slider,
+  div.recoveryContent1 .bf2 img.slider,
+  div.recoveryContent1 .br2 img.slider,
+  div.recoveryContent1 .bl2 img.slider,
+  div.recoveryContent1 .bre2 img.slider,
+  div.reinstallContent1 .bf1 img.slider,
+  div.reinstallContent1 .br1 img.slider,
+  div.reinstallContent1 .bl1 img.slider,
+  div.reinstallContent1 .bre1 img.slider,
+  div.reinstallContent1 .bf2 img.slider,
+  div.reinstallContent1 .br2 img.slider,
+  div.reinstallContent1 .bl2 img.slider,
+  div.reinstallContent1 .bre2 img.slider,
+  div.linuxContent1 .bf1 img.slider,
+  div.linuxContent1 .br1 img.slider,
+  div.linuxContent1 .bl1 img.slider,
+  div.linuxContent1 .bre1 img.slider,
+  div.linuxContent1 .bf2 img.slider,
+  div.linuxContent1 .br2 img.slider,
+  div.linuxContent1 .bl2 img.slider,
+  div.linuxContent1 .bre2 img.slider {
+    width: 100%;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 1024px) {
+  div.formatContent1 .bf1 img.slider,
+  div.formatContent1 .br1 img.slider,
+  div.formatContent1 .bl1 img.slider,
+  div.formatContent1 .bre1 img.slider,
+  div.formatContent1 .bf2 img.slider,
+  div.formatContent1 .br2 img.slider,
+  div.formatContent1 .bl2 img.slider,
+  div.formatContent1 .bre2 img.slider,
+  div.recoveryContent1 .bf1 img.slider,
+  div.recoveryContent1 .br1 img.slider,
+  div.recoveryContent1 .bl1 img.slider,
+  div.recoveryContent1 .bre1 img.slider,
+  div.recoveryContent1 .bf2 img.slider,
+  div.recoveryContent1 .br2 img.slider,
+  div.recoveryContent1 .bl2 img.slider,
+  div.recoveryContent1 .bre2 img.slider,
+  div.reinstallContent1 .bf1 img.slider,
+  div.reinstallContent1 .br1 img.slider,
+  div.reinstallContent1 .bl1 img.slider,
+  div.reinstallContent1 .bre1 img.slider,
+  div.reinstallContent1 .bf2 img.slider,
+  div.reinstallContent1 .br2 img.slider,
+  div.reinstallContent1 .bl2 img.slider,
+  div.reinstallContent1 .bre2 img.slider,
+  div.linuxContent1 .bf1 img.slider,
+  div.linuxContent1 .br1 img.slider,
+  div.linuxContent1 .bl1 img.slider,
+  div.linuxContent1 .bre1 img.slider,
+  div.linuxContent1 .bf2 img.slider,
+  div.linuxContent1 .br2 img.slider,
+  div.linuxContent1 .bl2 img.slider,
+  div.linuxContent1 .bre2 img.slider {
+    width: 30%;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 935px) {
+  div.formatContent1 .bf1 img.slider,
+  div.formatContent1 .br1 img.slider,
+  div.formatContent1 .bl1 img.slider,
+  div.formatContent1 .bre1 img.slider,
+  div.formatContent1 .bf2 img.slider,
+  div.formatContent1 .br2 img.slider,
+  div.formatContent1 .bl2 img.slider,
+  div.formatContent1 .bre2 img.slider,
+  div.recoveryContent1 .bf1 img.slider,
+  div.recoveryContent1 .br1 img.slider,
+  div.recoveryContent1 .bl1 img.slider,
+  div.recoveryContent1 .bre1 img.slider,
+  div.recoveryContent1 .bf2 img.slider,
+  div.recoveryContent1 .br2 img.slider,
+  div.recoveryContent1 .bl2 img.slider,
+  div.recoveryContent1 .bre2 img.slider,
+  div.reinstallContent1 .bf1 img.slider,
+  div.reinstallContent1 .br1 img.slider,
+  div.reinstallContent1 .bl1 img.slider,
+  div.reinstallContent1 .bre1 img.slider,
+  div.reinstallContent1 .bf2 img.slider,
+  div.reinstallContent1 .br2 img.slider,
+  div.reinstallContent1 .bl2 img.slider,
+  div.reinstallContent1 .bre2 img.slider,
+  div.linuxContent1 .bf1 img.slider,
+  div.linuxContent1 .br1 img.slider,
+  div.linuxContent1 .bl1 img.slider,
+  div.linuxContent1 .bre1 img.slider,
+  div.linuxContent1 .bf2 img.slider,
+  div.linuxContent1 .br2 img.slider,
+  div.linuxContent1 .bl2 img.slider,
+  div.linuxContent1 .bre2 img.slider {
+    width: 40%;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 920px) {
+  div.formatContent1 .bf1 img.slider,
+  div.formatContent1 .br1 img.slider,
+  div.formatContent1 .bl1 img.slider,
+  div.formatContent1 .bre1 img.slider,
+  div.formatContent1 .bf2 img.slider,
+  div.formatContent1 .br2 img.slider,
+  div.formatContent1 .bl2 img.slider,
+  div.formatContent1 .bre2 img.slider,
+  div.recoveryContent1 .bf1 img.slider,
+  div.recoveryContent1 .br1 img.slider,
+  div.recoveryContent1 .bl1 img.slider,
+  div.recoveryContent1 .bre1 img.slider,
+  div.recoveryContent1 .bf2 img.slider,
+  div.recoveryContent1 .br2 img.slider,
+  div.recoveryContent1 .bl2 img.slider,
+  div.recoveryContent1 .bre2 img.slider,
+  div.reinstallContent1 .bf1 img.slider,
+  div.reinstallContent1 .br1 img.slider,
+  div.reinstallContent1 .bl1 img.slider,
+  div.reinstallContent1 .bre1 img.slider,
+  div.reinstallContent1 .bf2 img.slider,
+  div.reinstallContent1 .br2 img.slider,
+  div.reinstallContent1 .bl2 img.slider,
+  div.reinstallContent1 .bre2 img.slider,
+  div.linuxContent1 .bf1 img.slider,
+  div.linuxContent1 .br1 img.slider,
+  div.linuxContent1 .bl1 img.slider,
+  div.linuxContent1 .bre1 img.slider,
+  div.linuxContent1 .bf2 img.slider,
+  div.linuxContent1 .br2 img.slider,
+  div.linuxContent1 .bl2 img.slider,
+  div.linuxContent1 .bre2 img.slider {
+    width: 40%;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 865px) {
+  div.formatContent1 .bf1 img.slider,
+  div.formatContent1 .br1 img.slider,
+  div.formatContent1 .bl1 img.slider,
+  div.formatContent1 .bre1 img.slider,
+  div.formatContent1 .bf2 img.slider,
+  div.formatContent1 .br2 img.slider,
+  div.formatContent1 .bl2 img.slider,
+  div.formatContent1 .bre2 img.slider,
+  div.recoveryContent1 .bf1 img.slider,
+  div.recoveryContent1 .br1 img.slider,
+  div.recoveryContent1 .bl1 img.slider,
+  div.recoveryContent1 .bre1 img.slider,
+  div.recoveryContent1 .bf2 img.slider,
+  div.recoveryContent1 .br2 img.slider,
+  div.recoveryContent1 .bl2 img.slider,
+  div.recoveryContent1 .bre2 img.slider,
+  div.reinstallContent1 .bf1 img.slider,
+  div.reinstallContent1 .br1 img.slider,
+  div.reinstallContent1 .bl1 img.slider,
+  div.reinstallContent1 .bre1 img.slider,
+  div.reinstallContent1 .bf2 img.slider,
+  div.reinstallContent1 .br2 img.slider,
+  div.reinstallContent1 .bl2 img.slider,
+  div.reinstallContent1 .bre2 img.slider,
+  div.linuxContent1 .bf1 img.slider,
+  div.linuxContent1 .br1 img.slider,
+  div.linuxContent1 .bl1 img.slider,
+  div.linuxContent1 .bre1 img.slider,
+  div.linuxContent1 .bf2 img.slider,
+  div.linuxContent1 .br2 img.slider,
+  div.linuxContent1 .bl2 img.slider,
+  div.linuxContent1 .bre2 img.slider {
+    width: 50%;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 865px) {
+  div.formatContent1 .bf1 img.slider,
+  div.formatContent1 .br1 img.slider,
+  div.formatContent1 .bl1 img.slider,
+  div.formatContent1 .bre1 img.slider,
+  div.formatContent1 .bf2 img.slider,
+  div.formatContent1 .br2 img.slider,
+  div.formatContent1 .bl2 img.slider,
+  div.formatContent1 .bre2 img.slider,
+  div.recoveryContent1 .bf1 img.slider,
+  div.recoveryContent1 .br1 img.slider,
+  div.recoveryContent1 .bl1 img.slider,
+  div.recoveryContent1 .bre1 img.slider,
+  div.recoveryContent1 .bf2 img.slider,
+  div.recoveryContent1 .br2 img.slider,
+  div.recoveryContent1 .bl2 img.slider,
+  div.recoveryContent1 .bre2 img.slider,
+  div.reinstallContent1 .bf1 img.slider,
+  div.reinstallContent1 .br1 img.slider,
+  div.reinstallContent1 .bl1 img.slider,
+  div.reinstallContent1 .bre1 img.slider,
+  div.reinstallContent1 .bf2 img.slider,
+  div.reinstallContent1 .br2 img.slider,
+  div.reinstallContent1 .bl2 img.slider,
+  div.reinstallContent1 .bre2 img.slider,
+  div.linuxContent1 .bf1 img.slider,
+  div.linuxContent1 .br1 img.slider,
+  div.linuxContent1 .bl1 img.slider,
+  div.linuxContent1 .bre1 img.slider,
+  div.linuxContent1 .bf2 img.slider,
+  div.linuxContent1 .br2 img.slider,
+  div.linuxContent1 .bl2 img.slider,
+  div.linuxContent1 .bre2 img.slider {
+    width: 60%;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 800px) {
+  div.formatContent1 .bf1 img.slider,
+  div.formatContent1 .br1 img.slider,
+  div.formatContent1 .bl1 img.slider,
+  div.formatContent1 .bre1 img.slider,
+  div.formatContent1 .bf2 img.slider,
+  div.formatContent1 .br2 img.slider,
+  div.formatContent1 .bl2 img.slider,
+  div.formatContent1 .bre2 img.slider,
+  div.recoveryContent1 .bf1 img.slider,
+  div.recoveryContent1 .br1 img.slider,
+  div.recoveryContent1 .bl1 img.slider,
+  div.recoveryContent1 .bre1 img.slider,
+  div.recoveryContent1 .bf2 img.slider,
+  div.recoveryContent1 .br2 img.slider,
+  div.recoveryContent1 .bl2 img.slider,
+  div.recoveryContent1 .bre2 img.slider,
+  div.reinstallContent1 .bf1 img.slider,
+  div.reinstallContent1 .br1 img.slider,
+  div.reinstallContent1 .bl1 img.slider,
+  div.reinstallContent1 .bre1 img.slider,
+  div.reinstallContent1 .bf2 img.slider,
+  div.reinstallContent1 .br2 img.slider,
+  div.reinstallContent1 .bl2 img.slider,
+  div.reinstallContent1 .bre2 img.slider,
+  div.linuxContent1 .bf1 img.slider,
+  div.linuxContent1 .br1 img.slider,
+  div.linuxContent1 .bl1 img.slider,
+  div.linuxContent1 .bre1 img.slider,
+  div.linuxContent1 .bf2 img.slider,
+  div.linuxContent1 .br2 img.slider,
+  div.linuxContent1 .bl2 img.slider,
+  div.linuxContent1 .bre2 img.slider {
+    width: 100%;
+  }
+}
+
+div.formatContent1 .br1,
+div.formatContent1 .bf2,
+div.formatContent1 .bre2,
+div.formatContent1 .bl1,
+div.recoveryContent1 .br1,
+div.recoveryContent1 .bf2,
+div.recoveryContent1 .bre2,
+div.recoveryContent1 .bl1,
+div.reinstallContent1 .br1,
+div.reinstallContent1 .bf2,
+div.reinstallContent1 .bre2,
+div.reinstallContent1 .bl1,
+div.linuxContent1 .br1,
+div.linuxContent1 .bf2,
+div.linuxContent1 .bre2,
+div.linuxContent1 .bl1 {
+  text-align: right;
+  color: #f1f1f1;
+}
+
+@media screen and (max-width: 800px) {
+  div.formatContent1 .br1,
+  div.formatContent1 .bf2,
+  div.formatContent1 .bre2,
+  div.formatContent1 .bl1,
+  div.recoveryContent1 .br1,
+  div.recoveryContent1 .bf2,
+  div.recoveryContent1 .bre2,
+  div.recoveryContent1 .bl1,
+  div.reinstallContent1 .br1,
+  div.reinstallContent1 .bf2,
+  div.reinstallContent1 .bre2,
+  div.reinstallContent1 .bl1,
+  div.linuxContent1 .br1,
+  div.linuxContent1 .bf2,
+  div.linuxContent1 .bre2,
+  div.linuxContent1 .bl1 {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
+}
+
+div.formatContent1 .br1 h2,
+div.formatContent1 .br1 ul,
+div.formatContent1 .bf2 h2,
+div.formatContent1 .bf2 ul,
+div.formatContent1 .bre2 h2,
+div.formatContent1 .bre2 ul,
+div.formatContent1 .bl1 h2,
+div.formatContent1 .bl1 ul,
+div.recoveryContent1 .br1 h2,
+div.recoveryContent1 .br1 ul,
+div.recoveryContent1 .bf2 h2,
+div.recoveryContent1 .bf2 ul,
+div.recoveryContent1 .bre2 h2,
+div.recoveryContent1 .bre2 ul,
+div.recoveryContent1 .bl1 h2,
+div.recoveryContent1 .bl1 ul,
+div.reinstallContent1 .br1 h2,
+div.reinstallContent1 .br1 ul,
+div.reinstallContent1 .bf2 h2,
+div.reinstallContent1 .bf2 ul,
+div.reinstallContent1 .bre2 h2,
+div.reinstallContent1 .bre2 ul,
+div.reinstallContent1 .bl1 h2,
+div.reinstallContent1 .bl1 ul,
+div.linuxContent1 .br1 h2,
+div.linuxContent1 .br1 ul,
+div.linuxContent1 .bf2 h2,
+div.linuxContent1 .bf2 ul,
+div.linuxContent1 .bre2 h2,
+div.linuxContent1 .bre2 ul,
+div.linuxContent1 .bl1 h2,
+div.linuxContent1 .bl1 ul {
+  text-shadow: 1px 2px 3px #000;
+}
+
+div.formatContent1 .br1 h2,
+div.formatContent1 .bf2 h2,
+div.formatContent1 .bre2 h2,
+div.formatContent1 .bl1 h2,
+div.recoveryContent1 .br1 h2,
+div.recoveryContent1 .bf2 h2,
+div.recoveryContent1 .bre2 h2,
+div.recoveryContent1 .bl1 h2,
+div.reinstallContent1 .br1 h2,
+div.reinstallContent1 .bf2 h2,
+div.reinstallContent1 .bre2 h2,
+div.reinstallContent1 .bl1 h2,
+div.linuxContent1 .br1 h2,
+div.linuxContent1 .bf2 h2,
+div.linuxContent1 .bre2 h2,
+div.linuxContent1 .bl1 h2 {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  text-align: left;
+}
+
+@media screen and (max-width: 1770px) {
+  div.formatContent1 .br1 h2,
+  div.formatContent1 .bf2 h2,
+  div.formatContent1 .bre2 h2,
+  div.formatContent1 .bl1 h2,
+  div.recoveryContent1 .br1 h2,
+  div.recoveryContent1 .bf2 h2,
+  div.recoveryContent1 .bre2 h2,
+  div.recoveryContent1 .bl1 h2,
+  div.reinstallContent1 .br1 h2,
+  div.reinstallContent1 .bf2 h2,
+  div.reinstallContent1 .bre2 h2,
+  div.reinstallContent1 .bl1 h2,
+  div.linuxContent1 .br1 h2,
+  div.linuxContent1 .bf2 h2,
+  div.linuxContent1 .bre2 h2,
+  div.linuxContent1 .bl1 h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  div.formatContent1 .br1 h2,
+  div.formatContent1 .bf2 h2,
+  div.formatContent1 .bre2 h2,
+  div.formatContent1 .bl1 h2,
+  div.recoveryContent1 .br1 h2,
+  div.recoveryContent1 .bf2 h2,
+  div.recoveryContent1 .bre2 h2,
+  div.recoveryContent1 .bl1 h2,
+  div.reinstallContent1 .br1 h2,
+  div.reinstallContent1 .bf2 h2,
+  div.reinstallContent1 .bre2 h2,
+  div.reinstallContent1 .bl1 h2,
+  div.linuxContent1 .br1 h2,
+  div.linuxContent1 .bf2 h2,
+  div.linuxContent1 .bre2 h2,
+  div.linuxContent1 .bl1 h2 {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (min-width: 1320px) and (max-width: 1025px) and (orientation: landscape) {
+  div.formatContent1 .br1 h2,
+  div.formatContent1 .bf2 h2,
+  div.formatContent1 .bre2 h2,
+  div.formatContent1 .bl1 h2,
+  div.recoveryContent1 .br1 h2,
+  div.recoveryContent1 .bf2 h2,
+  div.recoveryContent1 .bre2 h2,
+  div.recoveryContent1 .bl1 h2,
+  div.reinstallContent1 .br1 h2,
+  div.reinstallContent1 .bf2 h2,
+  div.reinstallContent1 .bre2 h2,
+  div.reinstallContent1 .bl1 h2,
+  div.linuxContent1 .br1 h2,
+  div.linuxContent1 .bf2 h2,
+  div.linuxContent1 .bre2 h2,
+  div.linuxContent1 .bl1 h2 {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 1024px) {
+  div.formatContent1 .br1 h2,
+  div.formatContent1 .bf2 h2,
+  div.formatContent1 .bre2 h2,
+  div.formatContent1 .bl1 h2,
+  div.recoveryContent1 .br1 h2,
+  div.recoveryContent1 .bf2 h2,
+  div.recoveryContent1 .bre2 h2,
+  div.recoveryContent1 .bl1 h2,
+  div.reinstallContent1 .br1 h2,
+  div.reinstallContent1 .bf2 h2,
+  div.reinstallContent1 .bre2 h2,
+  div.reinstallContent1 .bl1 h2,
+  div.linuxContent1 .br1 h2,
+  div.linuxContent1 .bf2 h2,
+  div.linuxContent1 .bre2 h2,
+  div.linuxContent1 .bl1 h2 {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  div.formatContent1 .br1 h2,
+  div.formatContent1 .bf2 h2,
+  div.formatContent1 .bre2 h2,
+  div.formatContent1 .bl1 h2,
+  div.recoveryContent1 .br1 h2,
+  div.recoveryContent1 .bf2 h2,
+  div.recoveryContent1 .bre2 h2,
+  div.recoveryContent1 .bl1 h2,
+  div.reinstallContent1 .br1 h2,
+  div.reinstallContent1 .bf2 h2,
+  div.reinstallContent1 .bre2 h2,
+  div.reinstallContent1 .bl1 h2,
+  div.linuxContent1 .br1 h2,
+  div.linuxContent1 .bf2 h2,
+  div.linuxContent1 .bre2 h2,
+  div.linuxContent1 .bl1 h2 {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 865px) {
+  div.formatContent1 .br1 h2,
+  div.formatContent1 .bf2 h2,
+  div.formatContent1 .bre2 h2,
+  div.formatContent1 .bl1 h2,
+  div.recoveryContent1 .br1 h2,
+  div.recoveryContent1 .bf2 h2,
+  div.recoveryContent1 .bre2 h2,
+  div.recoveryContent1 .bl1 h2,
+  div.reinstallContent1 .br1 h2,
+  div.reinstallContent1 .bf2 h2,
+  div.reinstallContent1 .bre2 h2,
+  div.reinstallContent1 .bl1 h2,
+  div.linuxContent1 .br1 h2,
+  div.linuxContent1 .bf2 h2,
+  div.linuxContent1 .bre2 h2,
+  div.linuxContent1 .bl1 h2 {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 865px) {
+  div.formatContent1 .br1 h2,
+  div.formatContent1 .bf2 h2,
+  div.formatContent1 .bre2 h2,
+  div.formatContent1 .bl1 h2,
+  div.recoveryContent1 .br1 h2,
+  div.recoveryContent1 .bf2 h2,
+  div.recoveryContent1 .bre2 h2,
+  div.recoveryContent1 .bl1 h2,
+  div.reinstallContent1 .br1 h2,
+  div.reinstallContent1 .bf2 h2,
+  div.reinstallContent1 .bre2 h2,
+  div.reinstallContent1 .bl1 h2,
+  div.linuxContent1 .br1 h2,
+  div.linuxContent1 .bf2 h2,
+  div.linuxContent1 .bre2 h2,
+  div.linuxContent1 .bl1 h2 {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 800px) {
+  div.formatContent1 .br1 h2,
+  div.formatContent1 .bf2 h2,
+  div.formatContent1 .bre2 h2,
+  div.formatContent1 .bl1 h2,
+  div.recoveryContent1 .br1 h2,
+  div.recoveryContent1 .bf2 h2,
+  div.recoveryContent1 .bre2 h2,
+  div.recoveryContent1 .bl1 h2,
+  div.reinstallContent1 .br1 h2,
+  div.reinstallContent1 .bf2 h2,
+  div.reinstallContent1 .bre2 h2,
+  div.reinstallContent1 .bl1 h2,
+  div.linuxContent1 .br1 h2,
+  div.linuxContent1 .bf2 h2,
+  div.linuxContent1 .bre2 h2,
+  div.linuxContent1 .bl1 h2 {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  div.formatContent1 .br1 h2,
+  div.formatContent1 .bf2 h2,
+  div.formatContent1 .bre2 h2,
+  div.formatContent1 .bl1 h2,
+  div.recoveryContent1 .br1 h2,
+  div.recoveryContent1 .bf2 h2,
+  div.recoveryContent1 .bre2 h2,
+  div.recoveryContent1 .bl1 h2,
+  div.reinstallContent1 .br1 h2,
+  div.reinstallContent1 .bf2 h2,
+  div.reinstallContent1 .bre2 h2,
+  div.reinstallContent1 .bl1 h2,
+  div.linuxContent1 .br1 h2,
+  div.linuxContent1 .bf2 h2,
+  div.linuxContent1 .bre2 h2,
+  div.linuxContent1 .bl1 h2 {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 768px) {
+  div.formatContent1 .br1 h2,
+  div.formatContent1 .bf2 h2,
+  div.formatContent1 .bre2 h2,
+  div.formatContent1 .bl1 h2,
+  div.recoveryContent1 .br1 h2,
+  div.recoveryContent1 .bf2 h2,
+  div.recoveryContent1 .bre2 h2,
+  div.recoveryContent1 .bl1 h2,
+  div.reinstallContent1 .br1 h2,
+  div.reinstallContent1 .bf2 h2,
+  div.reinstallContent1 .bre2 h2,
+  div.reinstallContent1 .bl1 h2,
+  div.linuxContent1 .br1 h2,
+  div.linuxContent1 .bf2 h2,
+  div.linuxContent1 .bre2 h2,
+  div.linuxContent1 .bl1 h2 {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 600px) {
+  div.formatContent1 .br1 h2,
+  div.formatContent1 .bf2 h2,
+  div.formatContent1 .bre2 h2,
+  div.formatContent1 .bl1 h2,
+  div.recoveryContent1 .br1 h2,
+  div.recoveryContent1 .bf2 h2,
+  div.recoveryContent1 .bre2 h2,
+  div.recoveryContent1 .bl1 h2,
+  div.reinstallContent1 .br1 h2,
+  div.reinstallContent1 .bf2 h2,
+  div.reinstallContent1 .bre2 h2,
+  div.reinstallContent1 .bl1 h2,
+  div.linuxContent1 .br1 h2,
+  div.linuxContent1 .bf2 h2,
+  div.linuxContent1 .bre2 h2,
+  div.linuxContent1 .bl1 h2 {
+    font-size: 0.85rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 580px) {
+  div.formatContent1 .br1 h2,
+  div.formatContent1 .bf2 h2,
+  div.formatContent1 .bre2 h2,
+  div.formatContent1 .bl1 h2,
+  div.recoveryContent1 .br1 h2,
+  div.recoveryContent1 .bf2 h2,
+  div.recoveryContent1 .bre2 h2,
+  div.recoveryContent1 .bl1 h2,
+  div.reinstallContent1 .br1 h2,
+  div.reinstallContent1 .bf2 h2,
+  div.reinstallContent1 .bre2 h2,
+  div.reinstallContent1 .bl1 h2,
+  div.linuxContent1 .br1 h2,
+  div.linuxContent1 .bf2 h2,
+  div.linuxContent1 .bre2 h2,
+  div.linuxContent1 .bl1 h2 {
+    font-size: 0.3rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  div.formatContent1 .br1 h2,
+  div.formatContent1 .bf2 h2,
+  div.formatContent1 .bre2 h2,
+  div.formatContent1 .bl1 h2,
+  div.recoveryContent1 .br1 h2,
+  div.recoveryContent1 .bf2 h2,
+  div.recoveryContent1 .bre2 h2,
+  div.recoveryContent1 .bl1 h2,
+  div.reinstallContent1 .br1 h2,
+  div.reinstallContent1 .bf2 h2,
+  div.reinstallContent1 .bre2 h2,
+  div.reinstallContent1 .bl1 h2,
+  div.linuxContent1 .br1 h2,
+  div.linuxContent1 .bf2 h2,
+  div.linuxContent1 .bre2 h2,
+  div.linuxContent1 .bl1 h2 {
+    font-size: 0.91rem;
+  }
+}
+
+div.formatContent1 .br1 ul,
+div.formatContent1 .bf2 ul,
+div.formatContent1 .bre2 ul,
+div.formatContent1 .bl1 ul,
+div.recoveryContent1 .br1 ul,
+div.recoveryContent1 .bf2 ul,
+div.recoveryContent1 .bre2 ul,
+div.recoveryContent1 .bl1 ul,
+div.reinstallContent1 .br1 ul,
+div.reinstallContent1 .bf2 ul,
+div.reinstallContent1 .bre2 ul,
+div.reinstallContent1 .bl1 ul,
+div.linuxContent1 .br1 ul,
+div.linuxContent1 .bf2 ul,
+div.linuxContent1 .bre2 ul,
+div.linuxContent1 .bl1 ul {
+  list-style: none;
+  text-align: left;
+}
+
+div.formatContent1 .br1 ul li,
+div.formatContent1 .bf2 ul li,
+div.formatContent1 .bre2 ul li,
+div.formatContent1 .bl1 ul li,
+div.recoveryContent1 .br1 ul li,
+div.recoveryContent1 .bf2 ul li,
+div.recoveryContent1 .bre2 ul li,
+div.recoveryContent1 .bl1 ul li,
+div.reinstallContent1 .br1 ul li,
+div.reinstallContent1 .bf2 ul li,
+div.reinstallContent1 .bre2 ul li,
+div.reinstallContent1 .bl1 ul li,
+div.linuxContent1 .br1 ul li,
+div.linuxContent1 .bf2 ul li,
+div.linuxContent1 .bre2 ul li,
+div.linuxContent1 .bl1 ul li {
+  font-size: 1.1rem;
+  margin: 10px;
+}
+
+@media screen and (max-width: 1770px) {
+  div.formatContent1 .br1 ul li,
+  div.formatContent1 .bf2 ul li,
+  div.formatContent1 .bre2 ul li,
+  div.formatContent1 .bl1 ul li,
+  div.recoveryContent1 .br1 ul li,
+  div.recoveryContent1 .bf2 ul li,
+  div.recoveryContent1 .bre2 ul li,
+  div.recoveryContent1 .bl1 ul li,
+  div.reinstallContent1 .br1 ul li,
+  div.reinstallContent1 .bf2 ul li,
+  div.reinstallContent1 .bre2 ul li,
+  div.reinstallContent1 .bl1 ul li,
+  div.linuxContent1 .br1 ul li,
+  div.linuxContent1 .bf2 ul li,
+  div.linuxContent1 .bre2 ul li,
+  div.linuxContent1 .bl1 ul li {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  div.formatContent1 .br1 ul li,
+  div.formatContent1 .bf2 ul li,
+  div.formatContent1 .bre2 ul li,
+  div.formatContent1 .bl1 ul li,
+  div.recoveryContent1 .br1 ul li,
+  div.recoveryContent1 .bf2 ul li,
+  div.recoveryContent1 .bre2 ul li,
+  div.recoveryContent1 .bl1 ul li,
+  div.reinstallContent1 .br1 ul li,
+  div.reinstallContent1 .bf2 ul li,
+  div.reinstallContent1 .bre2 ul li,
+  div.reinstallContent1 .bl1 ul li,
+  div.linuxContent1 .br1 ul li,
+  div.linuxContent1 .bf2 ul li,
+  div.linuxContent1 .bre2 ul li,
+  div.linuxContent1 .bl1 ul li {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  div.formatContent1 .br1 ul li,
+  div.formatContent1 .bf2 ul li,
+  div.formatContent1 .bre2 ul li,
+  div.formatContent1 .bl1 ul li,
+  div.recoveryContent1 .br1 ul li,
+  div.recoveryContent1 .bf2 ul li,
+  div.recoveryContent1 .bre2 ul li,
+  div.recoveryContent1 .bl1 ul li,
+  div.reinstallContent1 .br1 ul li,
+  div.reinstallContent1 .bf2 ul li,
+  div.reinstallContent1 .bre2 ul li,
+  div.reinstallContent1 .bl1 ul li,
+  div.linuxContent1 .br1 ul li,
+  div.linuxContent1 .bf2 ul li,
+  div.linuxContent1 .bre2 ul li,
+  div.linuxContent1 .bl1 ul li {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  div.formatContent1 .br1 ul li,
+  div.formatContent1 .bf2 ul li,
+  div.formatContent1 .bre2 ul li,
+  div.formatContent1 .bl1 ul li,
+  div.recoveryContent1 .br1 ul li,
+  div.recoveryContent1 .bf2 ul li,
+  div.recoveryContent1 .bre2 ul li,
+  div.recoveryContent1 .bl1 ul li,
+  div.reinstallContent1 .br1 ul li,
+  div.reinstallContent1 .bf2 ul li,
+  div.reinstallContent1 .bre2 ul li,
+  div.reinstallContent1 .bl1 ul li,
+  div.linuxContent1 .br1 ul li,
+  div.linuxContent1 .bf2 ul li,
+  div.linuxContent1 .bre2 ul li,
+  div.linuxContent1 .bl1 ul li {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 1320px) and (max-width: 1025px) and (orientation: landscape) {
+  div.formatContent1 .br1 ul li,
+  div.formatContent1 .bf2 ul li,
+  div.formatContent1 .bre2 ul li,
+  div.formatContent1 .bl1 ul li,
+  div.recoveryContent1 .br1 ul li,
+  div.recoveryContent1 .bf2 ul li,
+  div.recoveryContent1 .bre2 ul li,
+  div.recoveryContent1 .bl1 ul li,
+  div.reinstallContent1 .br1 ul li,
+  div.reinstallContent1 .bf2 ul li,
+  div.reinstallContent1 .bre2 ul li,
+  div.reinstallContent1 .bl1 ul li,
+  div.linuxContent1 .br1 ul li,
+  div.linuxContent1 .bf2 ul li,
+  div.linuxContent1 .bre2 ul li,
+  div.linuxContent1 .bl1 ul li {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 1024px) {
+  div.formatContent1 .br1 ul li,
+  div.formatContent1 .bf2 ul li,
+  div.formatContent1 .bre2 ul li,
+  div.formatContent1 .bl1 ul li,
+  div.recoveryContent1 .br1 ul li,
+  div.recoveryContent1 .bf2 ul li,
+  div.recoveryContent1 .bre2 ul li,
+  div.recoveryContent1 .bl1 ul li,
+  div.reinstallContent1 .br1 ul li,
+  div.reinstallContent1 .bf2 ul li,
+  div.reinstallContent1 .bre2 ul li,
+  div.reinstallContent1 .bl1 ul li,
+  div.linuxContent1 .br1 ul li,
+  div.linuxContent1 .bf2 ul li,
+  div.linuxContent1 .bre2 ul li,
+  div.linuxContent1 .bl1 ul li {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 865px) {
+  div.formatContent1 .br1 ul li,
+  div.formatContent1 .bf2 ul li,
+  div.formatContent1 .bre2 ul li,
+  div.formatContent1 .bl1 ul li,
+  div.recoveryContent1 .br1 ul li,
+  div.recoveryContent1 .bf2 ul li,
+  div.recoveryContent1 .bre2 ul li,
+  div.recoveryContent1 .bl1 ul li,
+  div.reinstallContent1 .br1 ul li,
+  div.reinstallContent1 .bf2 ul li,
+  div.reinstallContent1 .bre2 ul li,
+  div.reinstallContent1 .bl1 ul li,
+  div.linuxContent1 .br1 ul li,
+  div.linuxContent1 .bf2 ul li,
+  div.linuxContent1 .bre2 ul li,
+  div.linuxContent1 .bl1 ul li {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 865px) {
+  div.formatContent1 .br1 ul li,
+  div.formatContent1 .bf2 ul li,
+  div.formatContent1 .bre2 ul li,
+  div.formatContent1 .bl1 ul li,
+  div.recoveryContent1 .br1 ul li,
+  div.recoveryContent1 .bf2 ul li,
+  div.recoveryContent1 .bre2 ul li,
+  div.recoveryContent1 .bl1 ul li,
+  div.reinstallContent1 .br1 ul li,
+  div.reinstallContent1 .bf2 ul li,
+  div.reinstallContent1 .bre2 ul li,
+  div.reinstallContent1 .bl1 ul li,
+  div.linuxContent1 .br1 ul li,
+  div.linuxContent1 .bf2 ul li,
+  div.linuxContent1 .bre2 ul li,
+  div.linuxContent1 .bl1 ul li {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 800px) {
+  div.formatContent1 .br1 ul li,
+  div.formatContent1 .bf2 ul li,
+  div.formatContent1 .bre2 ul li,
+  div.formatContent1 .bl1 ul li,
+  div.recoveryContent1 .br1 ul li,
+  div.recoveryContent1 .bf2 ul li,
+  div.recoveryContent1 .bre2 ul li,
+  div.recoveryContent1 .bl1 ul li,
+  div.reinstallContent1 .br1 ul li,
+  div.reinstallContent1 .bf2 ul li,
+  div.reinstallContent1 .bre2 ul li,
+  div.reinstallContent1 .bl1 ul li,
+  div.linuxContent1 .br1 ul li,
+  div.linuxContent1 .bf2 ul li,
+  div.linuxContent1 .bre2 ul li,
+  div.linuxContent1 .bl1 ul li {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  div.formatContent1 .br1 ul li,
+  div.formatContent1 .bf2 ul li,
+  div.formatContent1 .bre2 ul li,
+  div.formatContent1 .bl1 ul li,
+  div.recoveryContent1 .br1 ul li,
+  div.recoveryContent1 .bf2 ul li,
+  div.recoveryContent1 .bre2 ul li,
+  div.recoveryContent1 .bl1 ul li,
+  div.reinstallContent1 .br1 ul li,
+  div.reinstallContent1 .bf2 ul li,
+  div.reinstallContent1 .bre2 ul li,
+  div.reinstallContent1 .bl1 ul li,
+  div.linuxContent1 .br1 ul li,
+  div.linuxContent1 .bf2 ul li,
+  div.linuxContent1 .bre2 ul li,
+  div.linuxContent1 .bl1 ul li {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 768px) {
+  div.formatContent1 .br1 ul li,
+  div.formatContent1 .bf2 ul li,
+  div.formatContent1 .bre2 ul li,
+  div.formatContent1 .bl1 ul li,
+  div.recoveryContent1 .br1 ul li,
+  div.recoveryContent1 .bf2 ul li,
+  div.recoveryContent1 .bre2 ul li,
+  div.recoveryContent1 .bl1 ul li,
+  div.reinstallContent1 .br1 ul li,
+  div.reinstallContent1 .bf2 ul li,
+  div.reinstallContent1 .bre2 ul li,
+  div.reinstallContent1 .bl1 ul li,
+  div.linuxContent1 .br1 ul li,
+  div.linuxContent1 .bf2 ul li,
+  div.linuxContent1 .bre2 ul li,
+  div.linuxContent1 .bl1 ul li {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 660px) {
+  div.formatContent1 .br1 ul li,
+  div.formatContent1 .bf2 ul li,
+  div.formatContent1 .bre2 ul li,
+  div.formatContent1 .bl1 ul li,
+  div.recoveryContent1 .br1 ul li,
+  div.recoveryContent1 .bf2 ul li,
+  div.recoveryContent1 .bre2 ul li,
+  div.recoveryContent1 .bl1 ul li,
+  div.reinstallContent1 .br1 ul li,
+  div.reinstallContent1 .bf2 ul li,
+  div.reinstallContent1 .bre2 ul li,
+  div.reinstallContent1 .bl1 ul li,
+  div.linuxContent1 .br1 ul li,
+  div.linuxContent1 .bf2 ul li,
+  div.linuxContent1 .bre2 ul li,
+  div.linuxContent1 .bl1 ul li {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  div.formatContent1 .br1 ul li,
+  div.formatContent1 .bf2 ul li,
+  div.formatContent1 .bre2 ul li,
+  div.formatContent1 .bl1 ul li,
+  div.recoveryContent1 .br1 ul li,
+  div.recoveryContent1 .bf2 ul li,
+  div.recoveryContent1 .bre2 ul li,
+  div.recoveryContent1 .bl1 ul li,
+  div.reinstallContent1 .br1 ul li,
+  div.reinstallContent1 .bf2 ul li,
+  div.reinstallContent1 .bre2 ul li,
+  div.reinstallContent1 .bl1 ul li,
+  div.linuxContent1 .br1 ul li,
+  div.linuxContent1 .bf2 ul li,
+  div.linuxContent1 .bre2 ul li,
+  div.linuxContent1 .bl1 ul li {
+    font-size: 0.68rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  div.formatContent1 .br1 ul li,
+  div.formatContent1 .bf2 ul li,
+  div.formatContent1 .bre2 ul li,
+  div.formatContent1 .bl1 ul li,
+  div.recoveryContent1 .br1 ul li,
+  div.recoveryContent1 .bf2 ul li,
+  div.recoveryContent1 .bre2 ul li,
+  div.recoveryContent1 .bl1 ul li,
+  div.reinstallContent1 .br1 ul li,
+  div.reinstallContent1 .bf2 ul li,
+  div.reinstallContent1 .bre2 ul li,
+  div.reinstallContent1 .bl1 ul li,
+  div.linuxContent1 .br1 ul li,
+  div.linuxContent1 .bf2 ul li,
+  div.linuxContent1 .bre2 ul li,
+  div.linuxContent1 .bl1 ul li {
+    font-size: 0.7rem;
+  }
+}
+
+div.formatContent1 .br1 ul li div.price,
+div.formatContent1 .bf2 ul li div.price,
+div.formatContent1 .bre2 ul li div.price,
+div.formatContent1 .bl1 ul li div.price,
+div.recoveryContent1 .br1 ul li div.price,
+div.recoveryContent1 .bf2 ul li div.price,
+div.recoveryContent1 .bre2 ul li div.price,
+div.recoveryContent1 .bl1 ul li div.price,
+div.reinstallContent1 .br1 ul li div.price,
+div.reinstallContent1 .bf2 ul li div.price,
+div.reinstallContent1 .bre2 ul li div.price,
+div.reinstallContent1 .bl1 ul li div.price,
+div.linuxContent1 .br1 ul li div.price,
+div.linuxContent1 .bf2 ul li div.price,
+div.linuxContent1 .bre2 ul li div.price,
+div.linuxContent1 .bl1 ul li div.price {
+  display: inline-block;
+  border: 2px solid #3f3f3f;
+  border-radius: 50px;
+  padding: 10px;
+  background-color: brown;
+}
+
+@media screen and (max-width: 414px) {
+  div.formatContent1 .br1 ul li div.price,
+  div.formatContent1 .bf2 ul li div.price,
+  div.formatContent1 .bre2 ul li div.price,
+  div.formatContent1 .bl1 ul li div.price,
+  div.recoveryContent1 .br1 ul li div.price,
+  div.recoveryContent1 .bf2 ul li div.price,
+  div.recoveryContent1 .bre2 ul li div.price,
+  div.recoveryContent1 .bl1 ul li div.price,
+  div.reinstallContent1 .br1 ul li div.price,
+  div.reinstallContent1 .bf2 ul li div.price,
+  div.reinstallContent1 .bre2 ul li div.price,
+  div.reinstallContent1 .bl1 ul li div.price,
+  div.linuxContent1 .br1 ul li div.price,
+  div.linuxContent1 .bf2 ul li div.price,
+  div.linuxContent1 .bre2 ul li div.price,
+  div.linuxContent1 .bl1 ul li div.price {
+    padding: 5px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 411px) {
+  div.formatContent1 .br1 ul li div.price,
+  div.formatContent1 .bf2 ul li div.price,
+  div.formatContent1 .bre2 ul li div.price,
+  div.formatContent1 .bl1 ul li div.price,
+  div.recoveryContent1 .br1 ul li div.price,
+  div.recoveryContent1 .bf2 ul li div.price,
+  div.recoveryContent1 .bre2 ul li div.price,
+  div.recoveryContent1 .bl1 ul li div.price,
+  div.reinstallContent1 .br1 ul li div.price,
+  div.reinstallContent1 .bf2 ul li div.price,
+  div.reinstallContent1 .bre2 ul li div.price,
+  div.reinstallContent1 .bl1 ul li div.price,
+  div.linuxContent1 .br1 ul li div.price,
+  div.linuxContent1 .bf2 ul li div.price,
+  div.linuxContent1 .bre2 ul li div.price,
+  div.linuxContent1 .bl1 ul li div.price {
+    padding: 5px;
+  }
+}
+
+div.formatContent1 .br1 ul li div.hr,
+div.formatContent1 .bf2 ul li div.hr,
+div.formatContent1 .bre2 ul li div.hr,
+div.formatContent1 .bl1 ul li div.hr,
+div.recoveryContent1 .br1 ul li div.hr,
+div.recoveryContent1 .bf2 ul li div.hr,
+div.recoveryContent1 .bre2 ul li div.hr,
+div.recoveryContent1 .bl1 ul li div.hr,
+div.reinstallContent1 .br1 ul li div.hr,
+div.reinstallContent1 .bf2 ul li div.hr,
+div.reinstallContent1 .bre2 ul li div.hr,
+div.reinstallContent1 .bl1 ul li div.hr,
+div.linuxContent1 .br1 ul li div.hr,
+div.linuxContent1 .bf2 ul li div.hr,
+div.linuxContent1 .bre2 ul li div.hr,
+div.linuxContent1 .bl1 ul li div.hr {
+  margin-top: 10px;
+  display: inline-block;
+  font-weight: 700;
+}
+
+div.formatContent1 .br1,
+div.formatContent1 .bf1,
+div.formatContent1 .bre1,
+div.formatContent1 .bl1,
+div.recoveryContent1 .br1,
+div.recoveryContent1 .bf1,
+div.recoveryContent1 .bre1,
+div.recoveryContent1 .bl1,
+div.reinstallContent1 .br1,
+div.reinstallContent1 .bf1,
+div.reinstallContent1 .bre1,
+div.reinstallContent1 .bl1,
+div.linuxContent1 .br1,
+div.linuxContent1 .bf1,
+div.linuxContent1 .bre1,
+div.linuxContent1 .bl1 {
+  border-right: transparent;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+div.formatContent1 .bf2,
+div.formatContent1 .br2,
+div.formatContent1 .bl2,
+div.formatContent1 .bre2,
+div.recoveryContent1 .bf2,
+div.recoveryContent1 .br2,
+div.recoveryContent1 .bl2,
+div.recoveryContent1 .bre2,
+div.reinstallContent1 .bf2,
+div.reinstallContent1 .br2,
+div.reinstallContent1 .bl2,
+div.reinstallContent1 .bre2,
+div.linuxContent1 .bf2,
+div.linuxContent1 .br2,
+div.linuxContent1 .bl2,
+div.linuxContent1 .bre2 {
+  border-left: transparent;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+div.formatContent1 .bf2 div.hr,
+div.formatContent1 .br2 div.hr,
+div.formatContent1 .bl2 div.hr,
+div.formatContent1 .bre2 div.hr,
+div.recoveryContent1 .bf2 div.hr,
+div.recoveryContent1 .br2 div.hr,
+div.recoveryContent1 .bl2 div.hr,
+div.recoveryContent1 .bre2 div.hr,
+div.reinstallContent1 .bf2 div.hr,
+div.reinstallContent1 .br2 div.hr,
+div.reinstallContent1 .bl2 div.hr,
+div.reinstallContent1 .bre2 div.hr,
+div.linuxContent1 .bf2 div.hr,
+div.linuxContent1 .br2 div.hr,
+div.linuxContent1 .bl2 div.hr,
+div.linuxContent1 .bre2 div.hr {
+  border-bottom: 2px solid #f1f1f1;
+}
+
+div.phoneContent1 {
+  margin-left: 50px;
+  -ms-flex-preferred-size: 30vh;
+      flex-basis: 30vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+}
+
+@media screen and (max-width: 500px) {
+  div.phoneContent1 {
+    margin-left: 10px;
+  }
+}
+
+div.phoneContent1 .company {
+  font-weight: 700;
+  font-size: 2rem;
+  width: 100%;
+}
+
+@media screen and (max-width: 825px) {
+  div.phoneContent1 .company {
+    font-size: 1.5rem;
+  }
+}
+
+div.phoneContent1 > * {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  -ms-flex-preferred-size: 8vh;
+      flex-basis: 8vh;
+  color: #f1f1f1;
+  text-shadow: 1px 2px 3px #000;
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 910px) {
+  div.phoneContent1 > * {
+    font-size: 1.3rem;
+    width: 30vw;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  div.phoneContent1 > * {
+    width: 50vw;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  div.phoneContent1 > * {
+    font-size: 1.5rem;
+    width: 40vw;
+  }
+}
+
+@media screen and (max-width: 825px) {
+  div.phoneContent1 > * {
+    font-size: 1.3rem;
+    width: 20vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.phoneContent1 > * {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  div.phoneContent1 > * {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  div.phoneContent1 > * {
+    font-size: 0.9rem;
+  }
+}
+
+div.phoneContent1 p:nth-child(3) > span {
+  color: orange;
+}
+
+div.phoneContent1 p:nth-child(4) > span > a {
+  text-decoration: none;
+  color: orange;
+}
+
+span button.showPhone,
+span button.showEmail {
+  position: relative;
+}
+
+button.showPhone,
+button.showEmail {
+  position: absolute;
+  padding: 5px 25px;
+  margin: 5px 10px;
+  color: #3498db;
+  font-size: 2rem;
+  border: 3px solid #3f3f3f;
+  border-radius: 10px;
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-transition: .3s .2s linear;
+  transition: .3s .2s linear;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 800px) {
+  button.showPhone,
+  button.showEmail {
+    font-size: 1rem;
+  }
+}
+
+button.showPhone::after,
+button.showEmail::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  top: 50%;
+  left: 100%;
+  background-color: brown;
+  -webkit-transition: left .3s, height .1s .3s;
+  transition: left .3s, height .1s .3s;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: -1;
+}
+
+button.showPhone:hover::after,
+button.showEmail:hover::after {
+  height: 110%;
+  left: 0;
+}
+
+button.showPhone:hover,
+button.showEmail:hover {
+  color: #fff;
+  border: 3px solid #000;
+}
+
+div.phoneContent2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 30vh;
+      flex-basis: 30vh;
+  margin: 20px 50px;
+}
+
+div.phoneContent2 .gps {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  border: 2px solid #000000;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 500px) {
+  div.phoneContent2 .gps {
+    margin: auto 0;
+  }
+}
+
+div.pageContent1 {
+  margin: 30px 30px;
+}
+
+@media screen and (max-width: 375px) {
+  div.pageContent1 {
+    margin: 25px auto;
+  }
+}
+
+div.pageContent1 ul.ulCont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 18vh;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+@media screen and (max-width: 768px) {
+  div.pageContent1 ul.ulCont {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 823px) and (orientation: landscape) {
+  div.pageContent1 ul.ulCont {
+    height: 25vh;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 675px) {
+  div.pageContent1 ul.ulCont {
+    height: 15vh;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 600px) {
+  div.pageContent1 ul.ulCont {
+    height: 12vh;
+    margin: 0 10px;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 510px) {
+  div.pageContent1 ul.ulCont {
+    height: 10vh;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 500px) {
+  div.pageContent1 ul.ulCont {
+    height: 10vh;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  div.pageContent1 ul.ulCont {
+    height: 15vh;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  div.pageContent1 ul.ulCont {
+    height: 15vh;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  div.pageContent1 ul.ulCont {
+    height: 15vh;
+  }
+}
+
+div.pageContent1 ul li.icon {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 25vh;
+      flex-basis: 25vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid #3f3f3f;
+  list-style: none;
+  border: 2px solid #3f3f3f;
+  border-radius: 13px;
+  color: #3f3f3f;
+  background-color: #f1f1f1;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+  div.pageContent1 ul li.icon {
+    -ms-flex-preferred-size: 20vh;
+        flex-basis: 20vh;
+    height: 70%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  div.pageContent1 ul li.icon {
+    -ms-flex-preferred-size: 10vh;
+        flex-basis: 10vh;
+    height: 50%;
+    margin: 0 5px;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 1024px) {
+  div.pageContent1 ul li.icon {
+    -ms-flex-preferred-size: 15vh;
+        flex-basis: 15vh;
+    height: 70%;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 935px) {
+  div.pageContent1 ul li.icon {
+    -ms-flex-preferred-size: 15vh;
+        flex-basis: 15vh;
+    height: 70%;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 920px) {
+  div.pageContent1 ul li.icon {
+    -ms-flex-preferred-size: 15vh;
+        flex-basis: 15vh;
+    height: 70%;
+  }
+}
+
+@media screen and (max-width: 823px) and (orientation: landscape) {
+  div.pageContent1 ul li.icon {
+    -ms-flex-preferred-size: 20vh;
+        flex-basis: 20vh;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 975px) {
+  div.pageContent1 ul li.icon {
+    -ms-flex-preferred-size: 15vh;
+        flex-basis: 15vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  div.pageContent1 ul li.icon {
+    -ms-flex-preferred-size: 18vh;
+        flex-basis: 18vh;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 675px) {
+  div.pageContent1 ul li.icon {
+    -ms-flex-preferred-size: 20vh;
+        flex-basis: 20vh;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 600px) {
+  div.pageContent1 ul li.icon {
+    -ms-flex-preferred-size: 15vh;
+        flex-basis: 15vh;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 510px) {
+  div.pageContent1 ul li.icon {
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 500px) {
+  div.pageContent1 ul li.icon {
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+  }
+}
+
+@media screen and (max-width: 615px) {
+  div.pageContent1 ul li.icon {
+    -ms-flex-preferred-size: 10vh;
+        flex-basis: 10vh;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  div.pageContent1 ul li.icon {
+    -ms-flex-preferred-size: 15vh;
+        flex-basis: 15vh;
+    margin: 5px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  div.pageContent1 ul li.icon {
+    -ms-flex-preferred-size: 15vh;
+        flex-basis: 15vh;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  div.pageContent1 ul li.icon {
+    -ms-flex-preferred-size: 18vh;
+        flex-basis: 18vh;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  div.pageContent1 ul li.icon {
+    -ms-flex-preferred-size: 20vh;
+        flex-basis: 20vh;
+  }
+}
+
+div.pageContent1 ul li.icon:hover {
+  background: linear-gradient(-45deg, #3498db, #a485fd);
+  border: 2px solid #3f3f3f;
+  color: #f1f1f1;
+}
+
+div.pageContent1 ul li.icon:hover:hover svg {
+  color: #f1f1f1;
+}
+
+div.pageContent1 ul li.icon svg {
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+  font-size: 5rem;
+  color: #3498db;
+}
+
+@media screen and (max-width: 1200px) {
+  div.pageContent1 ul li.icon svg {
+    margin-top: 5px;
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  div.pageContent1 ul li.icon svg {
+    margin-top: 5px;
+    font-size: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  div.pageContent1 ul li.icon svg {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  div.pageContent1 ul li.icon svg {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 823px) and (orientation: landscape) {
+  div.pageContent1 ul li.icon svg {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  div.pageContent1 ul li.icon svg {
+    margin-top: 5px;
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 615px) {
+  div.pageContent1 ul li.icon svg {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 510px) {
+  div.pageContent1 ul li.icon svg {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  div.pageContent1 ul li.icon svg {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  div.pageContent1 ul li.icon svg {
+    font-size: 1.5rem;
+  }
+}
+
+div.pageContent1 ul li.icon span {
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 1024px) {
+  div.pageContent1 ul li.icon span {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 1024px) {
+  div.pageContent1 ul li.icon span {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  div.pageContent1 ul li.icon span {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 935px) {
+  div.pageContent1 ul li.icon span {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 920px) {
+  div.pageContent1 ul li.icon span {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  div.pageContent1 ul li.icon span {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  div.pageContent1 ul li.icon span {
+    font-size: 0.7rem;
+    padding: 10px 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  div.pageContent1 ul li.icon span {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 675px) {
+  div.pageContent1 ul li.icon span {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 600px) {
+  div.pageContent1 ul li.icon span {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 580px) {
+  div.pageContent1 ul li.icon span {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 510px) {
+  div.pageContent1 ul li.icon span {
+    font-size: 0.65rem;
+  }
+}
+
+@media screen and (max-width: 615px) {
+  div.pageContent1 ul li.icon span {
+    padding: 5px 10px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  div.pageContent1 ul li.icon span {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  div.pageContent1 ul li.icon span {
+    font-size: 0.7rem;
+  }
+}
+
+div.pageContent1 ul li.active {
+  background: linear-gradient(-45deg, #3498db, #a485fd);
+  color: #f1f1f1;
+}
+
+div.pageContent1 ul li.active svg {
+  color: #f1f1f1;
+}
+
+div.pageContent1 ul li.active::after {
+  content: "";
+  position: absolute;
+  top: calc(95% - 15px);
+  left: calc(50% - 15px);
+  width: 30px;
+  height: 30px;
+  border: 3px solid #f1f1f1;
+  border-left: transparent;
+  border-top: transparent;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  -webkit-animation: move 1s alternate infinite linear;
+          animation: move 1s alternate infinite linear;
+}
+
+@media screen and (orientation: portrait) and (max-width: 510px) {
+  div.pageContent1 ul li.active::after {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  div.pageContent1 ul li.active::after {
+    display: none;
+  }
+}
+
+@-webkit-keyframes move {
+  from {
+    top: calc(95% - 15px);
+  }
+  to {
+    top: calc(105% - 15px);
+  }
+}
+
+@keyframes move {
+  from {
+    top: calc(95% - 15px);
+  }
+  to {
+    top: calc(105% - 15px);
+  }
+}
+
+div.pageContent2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 25vw;
+      flex-basis: 25vw;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 0 10px;
+}
+
+@media screen and (max-width: 1110px) {
+  div.pageContent2 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-preferred-size: 50vw;
+        flex-basis: 50vw;
+    -webkit-transition: all .5s linear;
+    transition: all .5s linear;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  div.pageContent2 {
+    -ms-flex-preferred-size: 75vw;
+        flex-basis: 75vw;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 1024px) {
+  div.pageContent2 {
+    -ms-flex-preferred-size: 50vw;
+        flex-basis: 50vw;
+  }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  div.pageContent2 {
+    -ms-flex-preferred-size: 40vw;
+        flex-basis: 40vw;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  div.pageContent2 {
+    -ms-flex-preferred-size: 55vw;
+        flex-basis: 55vw;
+  }
+}
+
+@media screen and (max-width: 823px) and (orientation: landscape) {
+  div.pageContent2 {
+    -ms-flex-preferred-size: 60vw;
+        flex-basis: 60vw;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  div.pageContent2 {
+    -ms-flex-preferred-size: 65vw;
+        flex-basis: 65vw;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  div.pageContent2 {
+    -ms-flex-preferred-size: 80vw;
+        flex-basis: 80vw;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 768px) {
+  div.pageContent2 {
+    -ms-flex-preferred-size: 70vw;
+        flex-basis: 70vw;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 675px) {
+  div.pageContent2 {
+    -ms-flex-preferred-size: 80vw;
+        flex-basis: 80vw;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 600px) {
+  div.pageContent2 {
+    -ms-flex-preferred-size: 100vw;
+        flex-basis: 100vw;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 510px) {
+  div.pageContent2 {
+    margin-top: 30px;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 500px) {
+  div.pageContent2 {
+    margin-top: 30px;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+
+@media screen and (min-width: 568px) and (max-width: 843px) and (orientation: landscape) {
+  div.pageContent2 {
+    -ms-flex-preferred-size: 90vw;
+        flex-basis: 90vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  div.pageContent2 {
+    margin-top: 30px;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -ms-flex-preferred-size: 100vw;
+        flex-basis: 100vw;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  div.pageContent2 {
+    -ms-flex-preferred-size: 140vw;
+        flex-basis: 140vw;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  div.pageContent2 {
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+  }
+}
+
+div.pageContent2 .tag1,
+div.pageContent2 .tag2 {
+  -ms-flex-preferred-size: 49%;
+      flex-basis: 49%;
+  height: 50vh;
+  overflow: hidden;
+}
+
+div.pageContent2 .tag1 {
+  border: trasparent;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  div.pageContent2 .tag1 {
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  div.pageContent2 .tag1 {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  div.pageContent2 .tag1 {
+    width: 80%;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 1024px) {
+  div.pageContent2 .tag1 {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  div.pageContent2 .tag1 {
+    width: 40%;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 935px) {
+  div.pageContent2 .tag1 {
+    width: 50%;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 920px) {
+  div.pageContent2 .tag1 {
+    width: 50%;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 800px) {
+  div.pageContent2 .tag1 {
+    width: 70%;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 675px) {
+  div.pageContent2 .tag1 {
+    width: 85%;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 610px) {
+  div.pageContent2 .tag1 {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  div.pageContent2 .tag1 {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 568px) and (max-width: 843px) and (orientation: landscape) {
+  div.pageContent2 .tag1 {
+    width: 80%;
+  }
+}
+
+div.pageContent2 .tag1 img {
+  width: 100%;
+  height: auto;
+}
+
+div.pageContent2 .tag2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  text-align: right;
+  padding: 12px;
+  border: 3px solid #3498db;
+  border-bottom: transparent;
+  border-left: transparent;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+@media screen and (max-width: 1110px) {
+  div.pageContent2 .tag2 {
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  div.pageContent2 .tag2 {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 510px) {
+  div.pageContent2 .tag2 {
+    -ms-flex-preferred-size: 30vh;
+        flex-basis: 30vh;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 500px) {
+  div.pageContent2 .tag2 {
+    -ms-flex-preferred-size: 30vh;
+        flex-basis: 30vh;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  div.pageContent2 .tag2 {
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  div.pageContent2 .tag2 {
+    -ms-flex-preferred-size: 35vh;
+        flex-basis: 35vh;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+div.pageContent2 .tag2 h2,
+div.pageContent2 .tag2 p {
+  text-shadow: 1px 2px 3px #000;
+  color: #f1f1f1;
+}
+
+div.pageContent2 .tag2 h2 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 1600px) {
+  div.pageContent2 .tag2 h2 {
+    font-size: 2.8rem;
+  }
+}
+
+@media screen and (max-width: 1420px) {
+  div.pageContent2 .tag2 h2 {
+    font-size: 2.7rem;
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  div.pageContent2 .tag2 h2 {
+    font-size: 2.6rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  div.pageContent2 .tag2 h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 1170px) {
+  div.pageContent2 .tag2 h2 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  div.pageContent2 .tag2 h2 {
+    font-size: 2.7rem;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 1024px) {
+  div.pageContent2 .tag2 h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  div.pageContent2 .tag2 h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 935px) {
+  div.pageContent2 .tag2 h2 {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 920px) {
+  div.pageContent2 .tag2 h2 {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 800px) {
+  div.pageContent2 .tag2 h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  div.pageContent2 .tag2 h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  div.pageContent2 .tag2 h2 {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 768px) {
+  div.pageContent2 .tag2 h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 570px) {
+  div.pageContent2 .tag2 h2 {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 411px) {
+  div.pageContent2 .tag2 h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  div.pageContent2 .tag2 h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 360px) {
+  div.pageContent2 .tag2 h2 {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  div.pageContent2 .tag2 h2 {
+    font-size: 1.1rem;
+  }
+}
+
+div.pageContent2 .tag2 p {
+  font-size: 1.8rem;
+}
+
+@media screen and (max-width: 1600px) {
+  div.pageContent2 .tag2 p {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 1420px) {
+  div.pageContent2 .tag2 p {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  div.pageContent2 .tag2 p {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  div.pageContent2 .tag2 p {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  div.pageContent2 .tag2 p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  div.pageContent2 .tag2 p {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  div.pageContent2 .tag2 p {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 1024px) {
+  div.pageContent2 .tag2 p {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 935px) {
+  div.pageContent2 .tag2 p {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 920px) {
+  div.pageContent2 .tag2 p {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 800px) {
+  div.pageContent2 .tag2 p {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  div.pageContent2 .tag2 p {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 768px) {
+  div.pageContent2 .tag2 p {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 720px) {
+  div.pageContent2 .tag2 p {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 570px) {
+  div.pageContent2 .tag2 p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  div.pageContent2 .tag2 p {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  div.pageContent2 .tag2 p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 360px) {
+  div.pageContent2 .tag2 p {
+    font-size: 0.9rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */
