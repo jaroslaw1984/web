@@ -1,0 +1,105 @@
+div.phoneContent1
+  margin-left: 50px
+  flex-basis: 30vh
+  display: flex 
+  flex-direction: column
+  justify-content: space-around
+  align-content: space-around
+  @media screen and (max-width: 500px)
+    margin-left: 10px
+div.phoneContent1 .company
+  font-weight: 700;
+  font-size: 2rem
+  width: 100%
+  @media screen and (max-width: 825px)
+    font-size: 1.5rem
+
+div.phoneContent1 > *
+  margin-top: 1rem
+  margin-left: 1rem
+  flex-basis: 8vh
+  color: $hex-white
+  text-shadow: $shadow
+  font-size: 2rem
+  @media screen and (max-width: 910px)
+    font-size: 1.3rem
+    width: 30vw
+  @media screen and (max-width: 900px)
+    width: 50vw
+  @media screen and (max-width: $medium)
+    font-size: 1.5rem
+    width: 40vw
+  @media screen and (max-width: 825px)
+    font-size: 1.3rem
+    width: 20vw
+  @media screen and (max-width: 600px)
+    font-size: 1.2rem
+  @media screen and (max-width: 500px)
+    font-size: 1rem
+  @media screen and (max-width: 320px)
+    font-size: 0.9rem
+div.phoneContent1 p:nth-child(3) > span
+  color: orange
+div.phoneContent1 p:nth-child(4) > span > a
+  text-decoration: none
+  color: orange
+// buttons that gen mail and phone
+span button.showPhone,
+span button.showEmail
+  position: relative
+
+
+button.showPhone,
+button.showEmail
+  position: absolute
+  padding: 5px 25px
+  margin: 5px 10px
+  color: $blue
+  font-size: 2rem
+  border: 3px solid $hex-black
+  border-radius: 10px
+  background-color: transparent
+  cursor: pointer
+  transition: .3s .2s linear
+  overflow: hidden
+  @media screen and (max-width: $medium)
+    font-size: 1rem
+        
+button.showPhone::after,
+button.showEmail::after 
+  content: ""
+  position: absolute
+  width: 100%
+  height: 10px
+  top: 50%
+  left: 100%
+  background-color: brown
+  transition: left .3s, height .1s .3s
+  transform: translateY(-50%)
+  z-index: -1
+      
+button.showPhone:hover::after,
+button.showEmail:hover::after 
+  height: 110%
+  left: 0
+        
+button.showPhone:hover,
+button.showEmail:hover  
+  color: #fff
+  border: 3px solid #000
+// end buttons line
+
+// gps location
+div.phoneContent2
+  display: flex
+  flex-basis: 30vh
+  margin: 20px 50px
+div.phoneContent2 .gps
+  flex-grow: 1
+  border: 2px solid #000000
+  border-radius: 20px
+  overflow: hidden
+  @media screen and (max-width: 500px)
+    margin: auto 0
+
+  

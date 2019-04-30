@@ -1,0 +1,96 @@
+ul.asideIcons
+  height: 100%
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+  @media screen and (max-width: 823px) and (orientation: landscape) 
+    position: fixed
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-template-rows: 1fr 1fr
+    z-index: 0
+  @media screen and (max-width: 414px)
+    position: fixed
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: repeat(3, 1fr)
+    z-index: 0
+  & li.navIcons 
+    display: flex
+    flex-direction: column
+    align-items: center
+    list-style: none
+    cursor: pointer
+    @media screen and (max-width: 823px) and (orientation: landscape)
+      align-items: center
+      justify-content: center
+    @media screen and (max-width: 414px)
+      align-items: center
+      justify-content: center
+    & img
+      transition: .5s
+      width: 70%
+      @media screen and (max-width: 823px) and (orientation: landscape)
+        width: 40%
+      @media screen and (max-width: 414px)
+        width: 50%
+      &:hover
+        margin-left: 20px
+        @media screen and (max-width: $large)   
+          margin-left: 10px
+        @media screen and (max-width: 823px) and (orientation: landscape)          
+          margin: 0
+        @media screen and (max-width: $medium)   
+          margin-left: 10px 
+
+[data-title]:hover::after
+  opacity: 1;
+  transition: all .1s ease .5s
+  visibility: visible
+  @media screen and (max-width: 1366px) and (orientation: landscape)
+    visibility: hidden 
+  @media screen and (max-width: 1024px)   
+    visibility: hidden 
+
+[data-title]::after 
+  content: attr(data-title)
+  position: absolute
+  bottom: -0.6rem
+  left: 110%
+  color: $hex-white
+  font-size: 1.3rem
+  padding: 15px 3px
+  white-space: nowrap
+  background-color: $bgc
+  box-shadow: 1px 1px 3px #222222
+  border: 1px solid #111111
+  border-radius: 5px
+  z-index: 99999
+  visibility: hidden
+  @media screen and (max-width: $large)   
+   font-size: 1rem
+   z-index: -99999  
+  @media screen and (max-width: $medium)   
+   font-size: 0.8rem
+   z-index: -99999  
+
+[data-title] 
+  position: relative
+
+
+
+    
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+      

@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&subset=latin-ext')
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+body
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh
+  @media screen and (min-width: 320px) and (max-width: 900px)
+    // background: url('../img/background/mobile.jpg')center/cover fixed no-repeat
+    background-image: url('../img/background/mobile.jpg')
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: 50%
+    background-attachment: fixed
+
+.container
+  min-height: 100vh
+  display: grid
+  grid-template-rows: 0.1fr 1fr
+  grid-template-columns: 0.08fr 1fr
+  grid-template-areas: "aside header" "aside main"
+  grid-column-gap: 2px
+  grid-row-gap: 2px
+  overflow: hidden
+  @media screen and (max-width: 1600px)
+    grid-template-columns: 0.10fr 1fr
+  @media screen and (max-width: 1400px)
+    grid-template-columns: 0.12fr 1fr
+  @media screen and (max-width: 1200px)
+    grid-template-columns: 0.15fr 1fr
+  @media screen and (max-width: 900px)
+    grid-template-columns: 0.17fr 1fr
+  @media screen and (max-width: 823px) and (orientation: landscape)
+    grid-template-columns: auto 1fr
+  @media screen and (max-width: 414px)
+    grid-template-columns: auto 1fr
+
+.header
+  grid-area: header
+  border-bottom-left-radius: 5px
+  justify-content: center
+  z-index: 1
+  
+.videoContainer
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  display: grid
+  grid-template-columns: 1fr
+  grid-template-rows: 1fr 
+  z-index: 0
+  @media screen and (max-width: $medium)
+    display: none
+  @media screen and (max-width: 823px) and (orientation: landscape)
+    display: none    
+  .videoItem
+    height: 100%
+    width: 100%
+    object-fit: cover
+
+.aside
+  grid-area: aside
+
+.main
+  grid-area: main
+  display: grid
+  grid-template-columns: 0.9fr   
+  grid-template-rows: 1fr 
+  align-items: center
+  justify-content: center
+  overflow-x: hidden
+  & section.wheelOptions
+    position: absolute
+    right: 0
+    bottom: 0
+    width: 140px
+    height: 150px
+    overflow: hidden
+    @media screen and (max-width: 823px) and (orientation: landscape)
+      height: 60px
+    @media screen and (max-width: 640px) and (orientation: landscape)
+      height: 50px
+    @media screen and (max-width: 568px) and (orientation: landscape)
+      height: 40px
+    @media screen and (max-width: 414px)
+      height: 65px
+    & div.option
+      position: fixed
+      right: 20px
+      bottom: 15px
+      font-size: 3.5rem
+      color: orange
+      transition: all .3s linear
+      cursor: pointer
+      @media screen and (max-width: 1770px)
+        font-size: 3.2rem
+      @media screen and (max-width: 1400px)
+        font-size: 3rem
+      @media screen and (max-width: 1000px)
+        font-size: 2.8rem
+      @media screen and (max-width: 760px)
+        font-size: 2.5rem      
+      &:hover
+        transform: rotate(90deg)
+        color: orange
+    & div#about
+      position: fixed
+      display: flex
+      flex-direction: column
+      justify-content: space-around
+      align-items: center
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      width: 30%
+      height: 30%
+      font-size: 1.5rem
+      color: $hex-white
+      text-shadow: $shadow
+      background-color: $hex-black
+      box-shadow: $box-shadow
+      border: 1px solid #111111
+      border-radius: 0.8%
+      @media screen and (max-width: 1024px)
+        font-size: 2rem  
+        flex-grow: 1
+        width: 50%
+        height: 30%
+      @media screen and (max-width: 768px)
+        font-size: 1.8rem  
+      @media screen and (max-width: 414px)
+        font-size: 1rem
+        text-align: center
+      @media screen and (max-width: 411px)
+        font-size: 0.9rem  
+      @media screen and (max-width: 360px)
+        font-size: 1rem  
+      @media screen and (max-width: 320px)
+        font-size: 0.9rem
+      @media screen and (min-width: 568px) and (max-width: 823px) and (orientation: landscape)
+        font-size: 1rem    
+      & div#info4
+        width: 100px
+        padding: 5px
+        font-size: 1.2rem
+        color: orange
+        border: 2px solid orange
+        border-radius: 10%
+        text-align: center
+        transition: .3s
+        cursor: pointer
+        &:hover
+          background-color: orange
+          color: $hex-white
+          
+
+    & div.info,
+    & div.play,
+    & div.pause
+      position: absolute  
+      right: 30px
+      bottom: 30px
+      font-size: 2.5rem
+      color: $hex-white   
+      cursor: pointer
+      transition: all .3s linear
+      display: none
+      @media screen and (max-width: 1770px)
+        font-size: 2.4rem
+      @media screen and (max-width: 1400px)
+        font-size: 2.2rem
+      @media screen and (max-width: 1000px)
+        font-size: 2rem
+      @media screen and (max-width: 800px)
+        font-size: 1.8rem
+      &:hover
+        color: orange 
+      &.show1
+        display: block
+        opacity: 1
+        animation-name: showIcons1
+        animation-duration: .5s
+        animation-fill-mode: forwards
+        @media screen and (max-width: 823px) and (orientation: landscape)
+          position: fixed          
+        @media screen and (max-width: 800px)
+          position: fixed          
+      &.hide1
+        animation-name: hide1
+        animation-direction: reverse;
+        
+    & div.play
+      &.show2
+        display: block
+        opacity: 0
+        animation-name: showIcons2
+        animation-duration: .5s
+        animation-fill-mode: forwards   
+        @media screen and (max-width: 800px)
+          display: none           
+      &.hide2
+        animation-name: hide2
+        animation-direction: reverse;
+        
+    & div.pause
+      &.show3
+        display: block
+        opacity: 0
+        animation-name: showIcons3
+        animation-duration: .5s
+        animation-fill-mode: forwards
+        @media screen and (max-width: 800px)
+          display: none
+      &.hide3
+        animation-name: hide3
+        animation-direction: reverse;
+
+@keyframes showIcons1
+  from
+    opacity: 0
+  to
+    opacity: 1
+    right: 100px
+
+@keyframes hide1
+  0%
+    opacity: 0
+    right: -40px
+    bottom: 15px
+  30%
+    opacity: 0
+    right: -5px
+    bottom: 5px
+  50%
+    opacity: 0
+    right: 20px
+    bottom: 15px   
+  100%
+    opacity: 1
+    right: 100px
+  
+@keyframes showIcons2
+  from
+    opacity: 0
+  to
+    opacity: 1
+    right: 80px
+    bottom: 80px
+
+@keyframes hide2
+  0%
+    opacity: 0
+    right: 0
+    bottom: -40px  
+  30%
+    opacity: 0
+    right: 20px
+    bottom: 20px
+  50%
+    opacity: 0
+    right: 40px
+    bottom: 40px    
+  100%
+    opacity: 1
+    right: 80px
+    bottom: 80px  
+
+@keyframes showIcons3
+  from
+    opacity: 0    
+  to
+    opacity: 1
+    right: 30px
+    bottom: 105px
+
+@keyframes hide3
+  0%
+    opacity: 0    
+    right: 30px
+    bottom: -40px
+  30%
+    opacity: 0
+    right: 30px
+    bottom: 10px
+  50%
+    opacity: 0
+    right: 30px
+    bottom: 50px  
+  100%
+    opacity: 1
+    right: 30px
+    bottom: 105px
+
+.showInfo
+  position: relative
+  top: 0
+  right: -110% 
+  min-height: 95%
+  background-color: $black-color
+  box-shadow: 1px 1px 3px #222222
+  border: 1px solid #111111
+  border-radius: 0.8%
+  transform: scale(0)
+  transition: all 1s ease
+  overflow: hidden
+  div.windowClose
+    position: absolute
+    top: 5px
+    right: 5px
+    width: 80px
+    height: 80px
+    cursor: pointer
+    @media screen and (max-width: $medium)
+      width: 70px
+      height: 70px
+    @media screen and (max-width: 1750px)
+      width: 60px
+      height: 60px
+    @media screen and (max-width: 1200px)
+      width: 50px
+      height: 50px    
+    .iconClose
+      text-align: center
+      line-height: 80px
+      font-size: 4rem
+      color: $hex-white
+      border-radius: 10%
+      transition: .3s
+      @media screen and (max-width: $medium)
+        font-size: 3.5rem
+        line-height: 70px
+      @media screen and (max-width: 1750px)
+        font-size: 3.3rem
+        line-height: 60px
+      @media screen and (max-width: 1200px)
+        font-size: 3rem
+        line-height: 50px
+      @media screen and (max-width: 411px)
+        font-size: 2.5rem
+        line-height: 50px
+      &:hover
+        background-color: $hex-black
+        color: orange
+        transform: scale(0.8)
+
+.active
+  right: 0
+  transform: scale(1)
+
+section div.mainContainer
+  display: flex
+  flex-direction: column
+  align-content: center
+
+section.showInfo h1.header
+  width: 60%
+  margin: 10px 30px
+  padding: 3px 15px 
+  color: $hex-white
+  font-size: 2.2rem
+  border: 2px solid brown
+  border-top-style: none
+  border-left-style: none
+  box-shadow: $box-shadow
+  text-shadow: $shadow
+  transform: skew(-30deg);
+  @media screen and (max-width: $medium)
+    font-size: 2rem
+  @media screen and (max-width: 1770px)
+    font-size: 1.8rem
+  @media screen and (max-width: 1400px)
+    font-size: 1.4rem
+  @media screen and (max-width: 1150px)
+    font-size: 1.2rem
+  @media screen and (max-width: 1000px)
+    font-size: 1rem
+  @media screen and (max-width: 850px)
+    font-size: 0.9rem
+  @media screen and (max-width: 320px)
+    font-size: 0.7rem
+  // @media screen and (max-width: 411px)
+  //   font-size: 0.65rem
+
+section.showInfo h1.header span
+  display: block
+  transform: skew(30deg);
+
