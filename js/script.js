@@ -17,8 +17,3 @@ const pages = new Pages('Tworzenie stron internetowych', 2, 'pageContent');
 const phone = new Phone('Więcej informacji', 2, 'phoneContent', 'Omegium Fix', 'Jarosław', 'Sochacki');
 const options = new Options();
 const changeTxt = new ChangeTxt('Omegium Fix', 'Tworzenie stron', 'Czyszczenie systemu', 'Odzyskiwanie danych', 'Instalacja Windowsa', 'Instalacja Linuxa');
-
-//preloader
-window.addEventListener('load', () => {
-  document.querySelector('.preloader').style.display = 'none';
-});
